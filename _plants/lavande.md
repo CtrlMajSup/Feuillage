@@ -3,7 +3,7 @@ layout: plant
 title: Lavande
 latin_name: Lavandula angustifolia
 date: 2024-01-20
-image: /assets/images/lavande.jpg
+image: /assets/images/lavande.webp
 tags:
   - Extérieur
   - Méditerranéen

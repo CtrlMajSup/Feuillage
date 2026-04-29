@@ -1,0 +1,36 @@
+title: "Flora Encyclopédie"
+description: "Une encyclopédie botanique moderne"
+baseurl: ""
+url: ""
+lang: fr
+
+# Collections
+collections:
+  plants:
+    output: true
+    permalink: /plantes/:slug/
+
+# Defaults
+defaults:
+  - scope:
+      path: ""
+      type: "plants"
+    values:
+      layout: "plant"
+
+# Plugins
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+
+# Pagination (optionnel)
+paginate: 24
+paginate_path: "/plantes/page/:num/"
+
+# Exclude
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor
+  - README.md

@@ -1,0 +1,46 @@
+---
+layout: default
+title: Encyclopédie
+permalink: /plantes/
+---
+
+<div class="container" style="padding-top: 48px; padding-bottom: 64px;">
+
+  <h1 style="font-family: var(--font-display); font-size: clamp(2rem, 4vw, 3rem); font-weight: 400; margin-bottom: 32px;">
+    Encyclopédie des plantes
+  </h1>
+
+  <!-- Barre de recherche -->
+  <div class="search-bar-wrap">
+    <div class="search-input-wrap">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/>
+      </svg>
+      <input type="search" id="search-input" placeholder="Rechercher une plante…" autocomplete="off">
+    </div>
+
+    <!-- Filtres par tag -->
+    {% assign all_tags = site.plants | map: 'tags' | join: ',' | split: ',' | sort | uniq %}
+    {% if all_tags.size > 0 %}
+    <div class="filter-tags">
+      <button class="filter-btn active" data-tag="">Toutes</button>
+      {% for tag in all_tags %}
+      {% unless tag == '' %}
+      <button class="filter-btn" data-tag="{{ tag | slugify }}">{{ tag | strip }}</button>
+      {% endunless %}
+      {% endfor %}
+    </div>
+    {% endif %}
+  </div>
+
+  <p class="plants-count" id="plants-count"></p>
+
+  <!-- Grille -->
+  <div class="plants-grid">
+    {% assign sorted_plants = site.plants | sort: 'title' %}
+    {% for plant in sorted_plants %}
+      {% include plant-card.html plant=plant %}
+    {% endfor %}
+  </div>
+
+</div>

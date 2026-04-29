@@ -1,0 +1,27 @@
+<article class="plant-card" data-tags="{{ include.plant.tags | join: ',' | downcase }}" data-name="{{ include.plant.title | downcase }}">
+  <a href="{{ include.plant.url | relative_url }}" class="plant-card__link">
+    <div class="plant-card__image">
+      {% if include.plant.image %}
+      <img src="{{ include.plant.image | relative_url }}" alt="{{ include.plant.title }}" loading="lazy">
+      {% else %}
+      <div class="plant-card__placeholder">🌿</div>
+      {% endif %}
+      {% if include.plant.difficulte %}
+      <span class="plant-card__badge difficulty--{{ include.plant.difficulte | downcase }}">{{ include.plant.difficulte }}</span>
+      {% endif %}
+    </div>
+    <div class="plant-card__body">
+      <h2 class="plant-card__title">{{ include.plant.title }}</h2>
+      {% if include.plant.latin_name %}
+      <p class="plant-card__latin">{{ include.plant.latin_name }}</p>
+      {% endif %}
+      {% if include.plant.tags %}
+      <div class="plant-card__tags">
+        {% for tag in include.plant.tags limit:3 %}
+        <span class="tag tag--sm">{{ tag }}</span>
+        {% endfor %}
+      </div>
+      {% endif %}
+    </div>
+  </a>
+</article>

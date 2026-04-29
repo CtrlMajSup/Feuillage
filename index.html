@@ -1,0 +1,28 @@
+---
+layout: home
+title: Accueil
+---
+
+<section class="hero">
+  <div class="container">
+    <span class="hero__eyebrow">Encyclopédie Botanique</span>
+    <h1 class="hero__title">Le monde des <em>plantes</em>,<br>à portée de main</h1>
+    <p class="hero__sub">Découvrez des fiches détaillées sur chaque espèce : entretien, origine, exposition et bien plus encore.</p>
+    <a href="{{ '/plantes/' | relative_url }}" class="hero__cta">
+      Explorer les plantes
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+    </a>
+  </div>
+</section>
+
+<section class="container" style="padding-bottom: 64px;">
+  <h2 style="font-family: var(--font-display); font-size: 1.75rem; font-weight: 400; margin-bottom: 28px;">
+    Ajouts récents
+  </h2>
+  <div class="plants-grid">
+    {% assign recent_plants = site.plants | sort: 'date' | reverse | limit: 8 %}
+    {% for plant in recent_plants %}
+      {% include plant-card.html plant=plant %}
+    {% endfor %}
+  </div>
+</section>

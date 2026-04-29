@@ -1,0 +1,112 @@
+---
+layout: default
+---
+
+<article class="plant-detail">
+
+  <header class="plant-header">
+    <div class="plant-header__inner container">
+      <div class="plant-breadcrumb">
+        <a href="{{ '/' | relative_url }}">Accueil</a>
+        <span>/</span>
+        <a href="{{ '/plantes/' | relative_url }}">Plantes</a>
+        <span>/</span>
+        <span>{{ page.title }}</span>
+      </div>
+
+      <div class="plant-header__content">
+        <div class="plant-header__text">
+          <div class="plant-tags">
+            {% for tag in page.tags %}
+            <a href="{{ '/plantes/' | relative_url }}?tag={{ tag | slugify }}" class="tag">{{ tag }}</a>
+            {% endfor %}
+          </div>
+          <h1 class="plant-title">{{ page.title }}</h1>
+          {% if page.latin_name %}
+          <p class="plant-latin">{{ page.latin_name }}</p>
+          {% endif %}
+          {% if page.excerpt %}
+          <p class="plant-intro">{{ page.excerpt }}</p>
+          {% endif %}
+        </div>
+
+        {% if page.image %}
+        <div class="plant-header__image">
+          <img src="{{ page.image | relative_url }}" alt="{{ page.title }}" loading="eager">
+        </div>
+        {% endif %}
+      </div>
+
+      <!-- Infos rapides -->
+      <div class="plant-quick-info">
+        {% if page.famille %}
+        <div class="quick-info-item">
+          <span class="quick-info-label">Famille</span>
+          <span class="quick-info-value">{{ page.famille }}</span>
+        </div>
+        {% endif %}
+        {% if page.origine %}
+        <div class="quick-info-item">
+          <span class="quick-info-label">Origine</span>
+          <span class="quick-info-value">{{ page.origine }}</span>
+        </div>
+        {% endif %}
+        {% if page.exposition %}
+        <div class="quick-info-item">
+          <span class="quick-info-label">Exposition</span>
+          <span class="quick-info-value">{{ page.exposition }}</span>
+        </div>
+        {% endif %}
+        {% if page.arrosage %}
+        <div class="quick-info-item">
+          <span class="quick-info-label">Arrosage</span>
+          <span class="quick-info-value">{{ page.arrosage }}</span>
+        </div>
+        {% endif %}
+        {% if page.difficulte %}
+        <div class="quick-info-item">
+          <span class="quick-info-label">Difficulté</span>
+          <span class="quick-info-value difficulty difficulty--{{ page.difficulte | downcase }}">{{ page.difficulte }}</span>
+        </div>
+        {% endif %}
+        {% if page.hauteur %}
+        <div class="quick-info-item">
+          <span class="quick-info-label">Hauteur</span>
+          <span class="quick-info-value">{{ page.hauteur }}</span>
+        </div>
+        {% endif %}
+      </div>
+    </div>
+  </header>
+
+  <div class="plant-body container">
+    <div class="plant-content">
+      {{ content }}
+    </div>
+
+    <aside class="plant-sidebar">
+      {% if page.entretien %}
+      <div class="sidebar-card">
+        <h3>Entretien</h3>
+        <ul>
+          {% for item in page.entretien %}
+          <li>{{ item }}</li>
+          {% endfor %}
+        </ul>
+      </div>
+      {% endif %}
+
+      {% if page.tags %}
+      <div class="sidebar-card">
+        <h3>Catégories</h3>
+        <div class="plant-tags">
+          {% for tag in page.tags %}
+          <a href="{{ '/plantes/' | relative_url }}?tag={{ tag | slugify }}" class="tag">{{ tag }}</a>
+          {% endfor %}
+        </div>
+      </div>
+      {% endif %}
+    </aside>
+  </div>
+
+</article>

@@ -77,6 +77,45 @@ layout: default
         {% endif %}
       </div>
     </div>
+
+  <div class="calendar-wrapper">
+  <h3>Calendrier de culture</h3>
+  <table class="garden-calendar">
+    <thead>
+      <tr>
+        <th>Action</th>
+        <th>Jan.</th>
+        <th>Fev.</th>
+        <th>Mar.</th>
+        <th>Avr.</th>
+        <th>Mai.</th>
+        <th>Juin</th>
+        <th>Juil.</th>
+        <th>Aou.</th>
+        <th>Sep.</th>
+        <th>Oct.</th>
+        <th>Nov.</th>
+        <th>Dec.</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% assign actions = "semis,taille,bouturage,recolte" | split: "," %}
+      {% for action in actions %}
+      <tr>
+        <td class="action-name">{{ action | capitalize }}</td>
+        {% for month in (1..12) %}
+          {% if page.calendrier[action] contains month %}
+            <td class="active-month {{ action }}"></td>
+          {% else %}
+            <td></td>
+          {% endif %}
+        {% endfor %}
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+
   </header>
 
   <div class="plant-body container">
@@ -108,5 +147,29 @@ layout: default
       {% endif %}
     </aside>
   </div>
+
+<section class="associations">
+  <h2>Bonnes Associations (Guildes)</h2>
+  <div class="assoc-grid">
+
+    {% comment %} On cherche les plantes citées dans cette fiche {% endcomment %}
+    {% for slug_ami in page.compagnons %}
+      
+      {% comment %} On demande à Jekyll de trouver la plante qui a ce slug {% endcomment %}
+      {% assign ami = site.plants | where: "slug", slug_ami | first %}
+
+      {% if ami %}
+        <div class="assoc-card">
+          <a href="{{ ami.url | relative_url }}">
+            <img src="{{ ami.image | relative_url }}" alt="{{ ami.title }}">
+            <p>{{ ami.title }}</p>
+          </a>
+        </div>
+      {% endif %}
+
+    {% endfor %}
+
+  </div>
+</section>
 
 </article>

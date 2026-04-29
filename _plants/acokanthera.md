@@ -1,6 +1,7 @@
 ---
 layout: plant
 title: Acokanthera
+slug: acokanthera
 latin_name: Acokanthera oppositifolia
 date: 2026-04-29
 image: /assets/images/acokanthera.webp
@@ -20,6 +21,12 @@ entretien:
   - Apport d'engrais organique au printemps
   - Attention, Porter des gants lors de toute manipulation
 excerpt: L'Acokanthera est un arbuste persistant aux fleurs blanches divinement parfumées et aux baies pourpres, mais attention, toutes ses parties sont extrêmement toxiques.
+calendrier:
+  semis: [6, 7, 8]
+  taille: [10, 11]
+  bouturage: [2, 3]
+  recolte: [1, 2]
+compagnons: ["lavande"]
 ---
 
 ## Description

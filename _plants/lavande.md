@@ -1,6 +1,7 @@
 ---
 layout: plant
 title: Lavande
+slug: lavande
 latin_name: Lavandula angustifolia
 date: 2024-01-20
 image: /assets/images/lavande.webp
@@ -21,6 +22,12 @@ entretien:
   - Sol bien drainé, calcaire apprécié
   - Planter en automne ou au printemps
 excerpt: La lavande est un arbuste emblématique de la région méditerranéenne, réputée pour ses épis parfumés mauves et son exceptionnelle résistance à la sécheresse.
+calendrier:
+  semis: [3, 4, 5]
+  taille: [8, 9]
+  bouturage: [6, 7]
+  recolte: [7, 8]
+compagnons: ["acokanthera"]
 ---
 
 ## Description

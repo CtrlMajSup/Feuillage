@@ -539,3 +539,151 @@ ul { list-style: none; }
   .quick-info-item { min-width: 80px; padding: 10px 12px; }
   .plant-sidebar { grid-template-columns: 1fr; }
 }
+
+/* --- CALENDRIER D'ENTRETIEN --- */
+
+.calendar-wrapper {
+  margin: 2rem 0;
+  padding: 1.5rem;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+  overflow-x: auto; /* Permet le défilement horizontal sur petit écran */
+}
+
+.garden-calendar {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+  min-width: 500px; /* Force une largeur mini pour garder la lisibilité */
+}
+
+.garden-calendar th, 
+.garden-calendar td {
+  padding: 12px 8px;
+  text-align: center;
+  border: 1px solid #f0f0f0;
+}
+
+/* Colonne des noms d'actions */
+.action-name {
+  text-align: left;
+  font-weight: 600;
+  background: #f9fbf9;
+  color: var(--primary);
+  width: 120px;
+}
+
+/* En-tête des mois */
+.garden-calendar thead th {
+  background: var(--primary);
+  font-weight: 500;
+}
+
+/* Styles des cases actives selon l'action */
+.active-month {
+  position: relative;
+  transition: transform 0.2s;
+}
+
+.active-month:hover {
+  transform: scale(1.1);
+  z-index: 10;
+}
+
+/* Couleurs spécifiques par type d'action */
+.active-month.semis {
+  background-color: #8bc34a; /* Vert tendre */
+  box-shadow: inset 0 0 0 2px #ffffff;
+}
+
+.active-month.taille {
+  background-color: #4db6ac; /* Turquoise sourd */
+  box-shadow: inset 0 0 0 2px #ffffff;
+}
+
+.active-month.bouturage {
+  background-color: #64b5f6; /* Bleu ciel */
+  box-shadow: inset 0 0 0 2px #ffffff;
+}
+
+.active-month.recolte {
+  background-color: #ffb74d; /* Orange/Or */
+  box-shadow: inset 0 0 0 2px #ffffff;
+}
+
+.active-month.marcottage {
+  background-color: #9575cd; /* Violet doux */
+  box-shadow: inset 0 0 0 2px #ffffff;
+}
+
+/* Légende automatique en dessous du calendrier */
+.calendar-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 1.5rem;
+  padding: 1rem;
+  background: #f9f9f9;
+  border-radius: 8px;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 3px;
+  margin-right: 6px;
+}
+
+/* Adaptabilité mobile */
+@media (max-width: 600px) {
+  .calendar-wrapper {
+    padding: 0.75rem;
+  }
+  .garden-calendar th, 
+  .garden-calendar td {
+    padding: 8px 4px;
+    font-size: 0.75rem;
+  }
+  .action-name {
+    width: 80px;
+  }
+}
+
+.associations {
+  margin-top: 40px;
+  padding-top: 20px;
+  border-top: 2px solid #eef2ee;
+}
+
+.assoc-grid {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap; /* Pour que ça passe à la ligne sur mobile */
+}
+
+.assoc-card {
+  width: 150px;
+  text-align: center;
+}
+
+.assoc-card img {
+  width: 100%;
+  height: 100px;
+  object-fit: cover; /* Recadre l'image proprement */
+  border-radius: 10px;
+  border: 1px solid #ddd;
+}
+
+.assoc-card a {
+  text-decoration: none;
+  color: #2d5a27;
+  font-weight: bold;
+}

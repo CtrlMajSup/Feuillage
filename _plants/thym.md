@@ -1,10 +1,10 @@
 ---
 layout: plant
-title: Lavande
-slug: lavande
-latin_name: Lavandula angustifolia
-date: 2024-01-15
-image: /assets/images/lavande.webp
+title: Thym
+slug: thym
+latin_name: Thymus vulgaris
+date: 2024-02-05
+image: /assets/images/thym.webp
 tags:
   - Extérieur
   - Plante aromatique
@@ -16,53 +16,53 @@ origine: Méditerranée
 exposition: Plein soleil
 arrosage: Faible
 difficulte: Facile
-hauteur: 30 à 60 cm
+hauteur: 10 à 30 cm
 entretien:
   - Arrosage modéré
   - Taille après la floraison
   - Paillage au pied
   - Protection contre l'humidité excessive
-  - Récolte des fleurs en été
-excerpt: La lavande est une plante aromatique aux fleurs violettes, connue pour ses propriétés apaisantes et son parfum envoûtant.
+  - Récolte des feuilles en été
+excerpt: Le thym est une plante aromatique aux feuilles parfumées, connue pour ses propriétés antiseptiques et digestives.
 calendrier:
   semis: [3, 4, 5]
   taille: [2, 3, 9, 10]
   bouturage: [3, 4, 5, 6, 7, 8]
   recolte: [6, 7, 8]
-compagnons: ["romarin", "thym", "sauge"]
+compagnons: ["lavande", "romarin", "sauge"]
 ---
 
 ## Description
 
-La *Lavandula angustifolia*, communément appelée lavande vraie ou lavande officinale, est une plante originaire de la région méditerranéenne. Elle est reconnue pour ses fleurs violettes parfumées et ses multiples propriétés thérapeutiques.
+Le *Thymus vulgaris*, communément appelé thym commun, est une plante originaire de la région méditerranéenne. Il est reconnu pour ses feuilles parfumées et ses multiples propriétés thérapeutiques.
 
-La lavande est une plante emblématique des jardins méditerranéens, appréciée pour son parfum apaisant et ses vertus relaxantes.
+Le thym est une plante aromatique emblématique, appréciée pour ses vertus antiseptiques et digestives.
 
 ## Entretien
 
 ### Lumière
 
-La lavande a besoin de **plein soleil** pour une floraison abondante. Elle apprécie les expositions chaudes et ensoleillées.
+Le thym a besoin de **plein soleil** pour une bonne croissance. Il apprécie les expositions chaudes et ensoleillées.
 
 ### Arrosage
 
-Arrosez **modérément**, en laissant sécher le substrat entre deux arrosages. La lavande est **résistante à la sécheresse** et n'aime pas l'humidité excessive.
+Arrosez **modérément**, en laissant sécher le substrat entre deux arrosages. Le thym est **résistant à la sécheresse** et n'aime pas l'humidité excessive.
 
 ### Température
 
-La lavande est **rustique** et supporte bien le gel. Elle est adaptée aux climats méditerranéens et tempérés.
+Le thym est **rustique** et supporte bien le gel. Il est adapté aux climats méditerranéens et tempérés.
 
 ### Sol
 
-Privilégiez un **sol bien drainé**, pauvre et caillouteux. La lavande craint les sols humides et argileux.
+Privilégiez un **sol bien drainé**, pauvre et caillouteux. Le thym craint les sols humides et argileux.
 
 ## Variétés populaires
 
-- *Lavandula angustifolia* : lavande vraie
-- *Lavandula latifolia* : lavande aspic
-- *Lavandula x intermedia* : lavande hybride
-- *Lavandula stoechas* : lavande papillon
-- *Lavandula dentata* : lavande dentée
+- *Thymus vulgaris* : thym commun
+- *Thymus serpyllum* : thym serpolet
+- *Thymus citriodorus* : thym citron
+- *Thymus pulegioides* : thym à feuilles de pulégium
+- *Thymus vulgaris 'Alba'* : thym blanc
 
 ## Multiplication
 
@@ -83,8 +83,8 @@ Privilégiez un **sol bien drainé**, pauvre et caillouteux. La lavande craint l
 ## Conseils
 
 - Parfait pour les jardins méditerranéens
-- Les fleurs sont parfumées et apaisantes
-- La lavande repousse les moustiques
+- Les feuilles sont parfumées et antiseptiques
+- Le thym repousse les moustiques
 - Évitez les sols gorgés d'eau
 - Protégez des vents froids
 
@@ -92,8 +92,8 @@ Privilégiez un **sol bien drainé**, pauvre et caillouteux. La lavande craint l
 
 ### Médicinales
 
-- Infusions relaxantes
-- Traitement des insomnies
+- Infusions antiseptiques
+- Traitement des infections respiratoires
 - Réduction du stress et de l'anxiété
 - Soulagement des maux de tête
 - Propriétés anti-inflammatoires
@@ -109,7 +109,7 @@ Privilégiez un **sol bien drainé**, pauvre et caillouteux. La lavande craint l
 ### Culinaires
 
 - Cuisine méditerranéenne
-- Sirop de lavande
+- Bouillons et sauces
 - Pâtisseries
 - Boissons alcoolisées
 - Sel et sucre aromatisés
@@ -125,14 +125,14 @@ Privilégiez un **sol bien drainé**, pauvre et caillouteux. La lavande craint l
 
 - Taillez après la floraison pour maintenir la forme
 - Paillage au pied pour conserver l'humidité
-- Récoltez les fleurs en été
-- Séchage des fleurs pour conservation
+- Récoltez les feuilles en été
+- Séchage des feuilles pour conservation
 - Protection contre l'humidité excessive
 
 ## Astuces
 
-- Plantez plusieurs lavandes pour une meilleure pollinisation
+- Plantez plusieurs thyms pour une meilleure pollinisation
 - Évitez les sols gorgés d'eau
-- La lavande est un répulsif naturel
-- Les fleurs séchées conservent leur parfum
-- La lavande attire les abeilles et les papillons
+- Le thym est un répulsif naturel
+- Les feuilles séchées conservent leur parfum
+- Le thym attire les abeilles et les papillons

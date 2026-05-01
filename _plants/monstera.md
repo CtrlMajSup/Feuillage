@@ -22,7 +22,7 @@ entretien:
   - Apporter de l'engrais liquide tous les 2 mois en période de croissance
   - Supporter les tiges pour maintenir une croissance verticale
   - Éviter les courants d'air froid
-excerpt: Le Monstera deliciosa, ou "plante à trou", est une plante d'intérieur emblématique aux feuilles perforées et brillantes, idéale pour apporter une touche tropicale à votre intérieur.
+excerpt: Le Monstera deliciosa, ou 'plante à trou', est une plante d'intérieur emblématique aux feuilles perforées et brillantes, idéale pour apporter une touche tropicale à votre intérieur.
 calendrier:
   semis: [3, 4, 5]
   taille: [2, 3, 9, 10]

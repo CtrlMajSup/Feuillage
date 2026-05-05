@@ -3,128 +3,76 @@ layout: plant
 title: Carotte
 slug: carotte
 latin_name: Daucus carota
-date: 2024-04-15
+date: 2026-04-29
 image: /assets/images/carotte.webp
 tags:
   - Extérieur
-  - Plante potagère
-  - Légume
-  - Résistante
-  - Facile
+  - Annuel
+  - Culinare
+  - Potager
+  - Racine
 famille: Apiaceae
-origine: Asie centrale
+type: annuel
+origine: Asie
 exposition: Plein soleil
-arrosage: Régulier
+arrosage: Modéré
 difficulte: Facile
-hauteur: 30 à 50 cm
+hauteur: 30 à 60 cm
+rusticite: -10°C
+sol: Bien drainé, sableux
+ph: Neutre
+vegetation: Annuel
+floraison: Été
+fruits: Oui
+couleur_fleurs: Blanc
+parfum: Non
+toxicite: Non toxique
 entretien:
   - Arrosage régulier
-  - Binage pour éliminer les mauvaises herbes
-  - Paillage au pied
-  - Protection contre les maladies
-  - Récolte des racines en automne
-excerpt: La carotte est une plante potagère aux racines orange, connue pour ses propriétés nutritives et son goût sucré.
+  - Taille après la floraison
+  - Protection contre la sécheresse
+  - Renouvellement annuel
+  - Paillage léger
+description: La carotte est une plante annuelle très appréciée pour ses racines utilisées en cuisine. Elle est idéale pour les potagers et les jardins.
+excerpt: La carotte est une plante annuelle, idéale pour la cuisine et les potagers.
 calendrier:
   semis: [3, 4, 5]
-  taille: [2, 3, 9, 10]
-  bouturage: [3, 4, 5, 6, 7, 8]
-  recolte: [9, 10, 11]
-compagnons: ["œillet d'Inde", "poireau", "lettuce"]
+  taille: [7, 8]
+  bouturage: [5, 6]
+  recolte: [7, 8, 9, 10]
+compagnons: ["tomate", "poivron", "menthe"]
+varietes:
+  - Daucus carota
+  - Daucus carota 'Nantaise'
+  - Daucus carota 'Chantenay'
+utilisations:
+  - Culinare
+  - Ornementale
+  - Purificatrice d'air
+  - Potager
+  - Racine
+problemes_courants:
+  - Pucerons
+  - Maladies fongiques
+  - Pourriture des racines
+soins_specifics:
+  - Sol bien drainé et sableux
+  - Plein soleil obligatoire
+  - Taille régulière
+  - Éviter l'humidité excessive
+astuces:
+  - Utilisé en cuisine
+  - Croissance rapide
+  - Idéal en potager
+  - Utilisé en salade
+  - Riche en vitamine A
+multiplication:
+  - Semis
+  - Bouturage
+conseils:
+  - Plantez en plein soleil
+  - Arrosage régulier
+  - Sol drainé et sableux
+  - Taille régulière
+  - Protection contre la sécheresse
 ---
-
-## Description
-
-Le *Daucus carota*, communément appelé carotte, est une plante originaire d'Asie centrale. Elle est reconnue pour ses racines orange et ses propriétés nutritives.
-
-La carotte est une plante potagère emblématique, appréciée pour ses vertus nutritives et son rôle dans la cuisine.
-
-## Entretien
-
-### Lumière
-
-La carotte a besoin de **plein soleil** pour une bonne croissance et une production abondante. Elle apprécie les expositions chaudes et ensoleillées.
-
-### Arrosage
-
-Arrosez **régulièrement**, en évitant de mouiller les feuilles. La carotte a besoin d'eau constante pour une bonne production.
-
-### Température
-
-La carotte est **rustique** et supporte bien le gel. Elle est adaptée aux climats tempérés.
-
-### Sol
-
-Privilégiez un **sol bien drainé**, sableux et léger. La carotte s'adapte à différents types de terrain.
-
-## Variétés populaires
-
-- *Daucus carota* : carotte commune
-- *Daucus carota 'Nantaise'* : carotte nantaise
-- *Daucus carota 'Chantenay'* : carotte chantenay
-- *Daucus carota 'Ronde de Paris'* : carotte ronde
-- *Daucus carota 'Jaune'* : carotte jaune
-
-## Multiplication
-
-### Semis
-
-1. Semez les graines au printemps
-2. Maintenez à 15-20°C avec une humidité modérée
-3. Les graines germent en 2-4 semaines
-4. Éclaircissez lorsque les plantules ont 4-5 feuilles
-
-### Bouturage
-
-1. Prélevez des boutures herbacées au printemps
-2. Trempez dans de l'hormone de bouturage
-3. Maintenez dans un mélange humide et ombragé
-4. Les boutures prennent généralement bien
-
-## Conseils
-
-- Parfait pour les jardins potagers
-- Les racines sont nutritives
-- La carotte est polyvalente en cuisine
-- Évitez les sols argileux
-- Protégez des vents froids
-
-## Utilisations
-
-### Culinaires
-
-- Salades
-- Soupes
-- Ragoûts
-- Pâtisseries
-- Boissons
-
-### Médicinales
-
-- Riche en bêta-carotène
-- Propriétés antioxydantes
-- Amélioration de la vision
-- Renforcement du système immunitaire
-- Propriétés diurétiques
-
-## Problèmes courants
-
-- **Mouche de la carotte** : traiter avec des filets
-- **Pucerons** : traiter avec du savon noir
-- **Acariens** : augmenter l'humidité ambiante
-- **Carences** : apport de compost en automne
-
-## Soins spécifiques
-
-- Binage pour éliminer les mauvaises herbes
-- Paillage au pied pour conserver l'humidité
-- Récoltez les racines mûres
-- Protection contre les maladies fongiques
-- Rotation des cultures
-
-## Astuces
-
-- Plantez plusieurs carottes pour une meilleure pollinisation
-- Évitez les sols argileux
-- La carotte est un légume-racine
-- Les racines jeunes ont plus de saveur
-- La carotte attire les abeilles

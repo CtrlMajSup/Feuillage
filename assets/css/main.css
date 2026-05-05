@@ -365,8 +365,64 @@ ul { list-style: none; }
 .difficulty--difficile { color: var(--color-hard); }
 
 /* ============================================
-   PLANT DETAIL
-   ============================================ */
+    PLANT DETAIL
+    ============================================ */
+/* Tab Navigation */
+.plant-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 32px;
+  border-bottom: 1px solid var(--color-border);
+  padding-bottom: 8px;
+}
+
+.tab-btn {
+  padding: 10px 20px;
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: var(--radius-sm);
+  font-family: var(--font-body);
+  font-size: 0.9375rem;
+  font-weight: 500;
+  color: var(--color-text-soft);
+  cursor: pointer;
+  transition: all var(--transition);
+  border-bottom: 2px solid transparent;
+  margin-bottom: -1px;
+}
+
+.tab-btn:hover {
+  color: var(--color-accent);
+  background: var(--color-accent-lt);
+}
+
+.tab-btn.active {
+  color: var(--color-accent);
+  border-bottom-color: var(--color-accent);
+  background: transparent;
+}
+
+.tab-content {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.tab-pane {
+  display: none;
+  animation: fadeIn 0.3s ease;
+}
+
+.tab-pane.active {
+  display: block;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
 .plant-header {
   background: var(--color-surface);
   border-bottom: 1px solid var(--color-border);
@@ -444,9 +500,6 @@ ul { list-style: none; }
 
 /* Plant body */
 .plant-body {
-  display: grid;
-  grid-template-columns: 1fr 280px;
-  gap: 48px;
   padding-top: 48px;
   padding-bottom: 64px;
   align-items: start;
@@ -519,13 +572,16 @@ ul { list-style: none; }
 .about-page p { font-size: 1.0625rem; line-height: 1.75; color: var(--color-text-soft); margin-bottom: 16px; }
 
 /* ============================================
-   RESPONSIVE
-   ============================================ */
+    RESPONSIVE
+    ============================================ */
 @media (max-width: 900px) {
   .plant-body { grid-template-columns: 1fr; }
   .plant-sidebar { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
   .plant-header__content { grid-template-columns: 1fr; }
   .plant-header__image { width: 100%; max-width: 320px; aspect-ratio: 16/9; }
+  .plant-tabs { flex-wrap: wrap; }
+  .tab-btn { flex: 1 1 auto; min-width: 120px; }
+  .plant-quick-info { display: block; }
 }
 
 @media (max-width: 640px) {
@@ -538,6 +594,7 @@ ul { list-style: none; }
 
   .quick-info-item { min-width: 80px; padding: 10px 12px; }
   .plant-sidebar { grid-template-columns: 1fr; }
+  .tab-btn { flex: 1 1 100%; min-width: 100%; }
 }
 
 /* --- CALENDRIER D'ENTRETIEN --- */
@@ -545,114 +602,165 @@ ul { list-style: none; }
 .calendar-wrapper {
   margin: 2rem 0;
   padding: 1.5rem;
-  background: #ffffff;
-  border-radius: 12px;
-  overflow-x: auto; /* Permet le défilement horizontal sur petit écran */
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
 }
 
-.garden-calendar {
-  width: 100%;
-  border-collapse: collapse;
-  font-size: 0.9rem;
-  min-width: 500px; /* Force une largeur mini pour garder la lisibilité */
-}
-
-.garden-calendar th, 
-.garden-calendar td {
-  padding: 12px 8px;
-  text-align: center;
-  border: 1px solid #f0f0f0;
-}
-
-/* Colonne des noms d'actions */
-.action-name {
-  text-align: left;
+.calendar-title {
+  font-family: var(--font-display);
+  font-size: 1.3rem;
   font-weight: 600;
-  background: #f9fbf9;
-  color: var(--primary);
-  width: 120px;
+  margin-bottom: 1.5rem;
+  color: var(--color-text);
 }
 
-/* En-tête des mois */
-.garden-calendar thead th {
-  background: var(--primary);
-  font-weight: 500;
-}
-
-/* Styles des cases actives selon l'action */
-.active-month {
-  position: relative;
-  transition: transform 0.2s;
-}
-
-.active-month:hover {
-  transform: scale(1.1);
-  z-index: 10;
-}
-
-/* Couleurs spécifiques par type d'action */
-.active-month.semis {
-  background-color: #8bc34a; /* Vert tendre */
-  box-shadow: inset 0 0 0 2px #ffffff;
-}
-
-.active-month.taille {
-  background-color: #4db6ac; /* Turquoise sourd */
-  box-shadow: inset 0 0 0 2px #ffffff;
-}
-
-.active-month.bouturage {
-  background-color: #64b5f6; /* Bleu ciel */
-  box-shadow: inset 0 0 0 2px #ffffff;
-}
-
-.active-month.recolte {
-  background-color: #ffb74d; /* Orange/Or */
-  box-shadow: inset 0 0 0 2px #ffffff;
-}
-
-.active-month.marcottage {
-  background-color: #9575cd; /* Violet doux */
-  box-shadow: inset 0 0 0 2px #ffffff;
-}
-
-/* Légende automatique en dessous du calendrier */
-.calendar-legend {
+.calendar-actions {
   display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
-  margin-top: 1.5rem;
-  padding: 1rem;
-  background: #f9f9f9;
-  border-radius: 8px;
+  flex-direction: column;
+  gap: 16px;
 }
 
-.legend-item {
+.calendar-action {
   display: flex;
   align-items: center;
-  font-size: 0.8rem;
+  gap: 20px;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.calendar-action:last-child {
+  border-bottom: none;
+}
+
+.calendar-action-label {
+  flex: 0 0 120px;
+  font-family: var(--font-display);
+  font-size: 0.9375rem;
   font-weight: 500;
+  color: var(--color-text);
+  text-align: right;
 }
 
-.dot {
-  width: 12px;
-  height: 12px;
-  border-radius: 3px;
-  margin-right: 6px;
+.calendar-timeline {
+  display: flex;
+  flex: 1;
+  gap: 12px;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
-/* Adaptabilité mobile */
-@media (max-width: 600px) {
-  .calendar-wrapper {
-    padding: 0.75rem;
+.calendar-month-cell {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  flex: 0 0 40px;
+}
+
+.calendar-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--color-accent);
+  transition: transform 0.2s ease;
+}
+
+.calendar-dot:hover {
+  transform: scale(1.2);
+}
+
+.calendar-dot-empty {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: transparent;
+  border: 1px solid var(--color-border);
+}
+
+.calendar-month-label {
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--color-text-soft);
+  text-align: center;
+  min-width: 30px;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .calendar-action {
+    gap: 16px;
+    flex-direction: column;
+    align-items: flex-start;
   }
-  .garden-calendar th, 
-  .garden-calendar td {
-    padding: 8px 4px;
+
+  .calendar-action-label {
+    flex: 0 0 100px;
+    font-size: 0.875rem;
+    text-align: left;
+    margin-bottom: 8px;
+  }
+
+  .calendar-timeline {
+    gap: 8px;
+    justify-content: flex-start;
+  }
+
+  .calendar-month-cell {
+    flex: 0 0 30px;
+  }
+
+  .calendar-dot, .calendar-dot-empty {
+    width: 8px;
+    height: 8px;
+  }
+
+  .calendar-month-label {
+    font-size: 0.7rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .calendar-action-label {
+    flex: 0 0 0px;
+    font-size: 0.8125rem;
+  }
+
+  .calendar-timeline {
+    gap: 6px;
+  }
+
+  .calendar-month-cell {
+    flex: 0 0 25px;
+  }
+
+  .calendar-dot, .calendar-dot-empty {
+    width: 6px;
+    height: 6px;
+  }
+
+  .calendar-month-label {
+    font-size: 0.65rem;
+  }
+}
+
+@media (max-width: 360px) {
+  .calendar-action-label {
+    flex: 0 0 60px;
     font-size: 0.75rem;
   }
-  .action-name {
-    width: 80px;
+
+  .calendar-timeline {
+    gap: 4px;
+  }
+
+  .calendar-month-cell {
+    flex: 0 0 20px;
+  }
+
+  .calendar-month-label {
+    font-size: 0.6rem;
   }
 }
 

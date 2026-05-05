@@ -3,98 +3,77 @@ layout: plant
 title: Sansevieria
 slug: sansevieria
 latin_name: Sansevieria trifasciata
-date: 2024-03-15
+date: 2026-04-29
 image: /assets/images/sansevieria.webp
 tags:
-  - Plante grasse
   - Intérieur
-  - Facile
-  - Purificatrice d'air
-  - Décorative
+  - Plante d'intérieur
+  - Ornemental
+  - Persistant
+  - Succulente
 famille: Asparagaceae
-origine: Afrique tropicale
-exposition: Lumière indirecte à faible
+type: plante d'intérieur
+origine: Afrique
+exposition: Plein soleil à mi-ombre
 arrosage: Très faible
-difficulte: Très facile
-hauteur: 60 cm à 1,5 m
+difficulte: Facile
+hauteur: 30 à 100 cm
+rusticite: 5°C
+sol: Bien drainé, léger
+ph: Neutre
+vegetation: Persistant
+floraison: Été
+fruits: Oui
+couleur_fleurs: Blanc
+parfum: Non
+toxicite: Toxique (sève)
 entretien:
-  - Arroser toutes les 3-4 semaines
-  - Éviter l'excès d'eau
-  - Nettoyer les feuilles pour enlever la poussière
-  - Supporter les tiges pour les variétés hautes
-  - Résiste bien à la sécheresse
-excerpt: La Sansevieria, ou "langue de belle-mère", est une plante d'intérieur ultra-résistante, idéale pour les débutants et les espaces avec peu de lumière.
+  - Arrosage minimal
+  - Taille après la floraison
+  - Protection contre la sécheresse
+  - Renouvellement tous les 2-3 ans
+  - Paillage pour conserver l'humidité
+description: La sansevieria est une plante d'intérieur très appréciée pour sa résistance et ses feuilles décoratives. Elle est idéale pour les intérieurs et les bureaux.
+excerpt: La sansevieria est une plante d'intérieur résistante, idéale pour les intérieurs et les bureaux.
 calendrier:
-  semis: [3, 4, 5]
-  taille: [2, 3, 9, 10]
-  bouturage: [3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
-  recolte: [6, 7, 8]
-compagnons: ["aloe"]
+  semis: [4, 5]
+  taille: [9, 10]
+  bouturage: [8, 9]
+  recolte: [7, 8, 9]
+compagnons: ["lavande", "romarin", "thym"]
+varietes:
+  - Sansevieria trifasciata
+  - Sansevieria cylindrica
+  - Sansevieria laurentii
+utilisations:
+  - Ornementale
+  - Intérieur
+  - Purificatrice d'air
+  - Décoration
+  - Succulente
+problemes_courants:
+  - Pucerons
+  - Cochenilles
+  - Maladies fongiques
+soins_specifics:
+  - Sol bien drainé et léger
+  - Plein soleil à mi-ombre
+  - Taille légère
+  - Éviter l'humidité excessive
+astuces:
+  - Idéal pour les intérieurs
+  - Purifie l'air
+  - Très résistante
+  - Résiste à la sécheresse
+  - Décoration moderne
+multiplication:
+  - Semis
+  - Bouturage
+  - Division
+conseils:
+  - Plantez en plein soleil
+  - Arrosage minimal
+  - Sol drainé et léger
+  - Taille légère
+  - Protection contre le gel
 ---
-
-## Description
-
-La *Sansevieria trifasciata*, communément appelée "langue de belle-mère", "langue de serpent" ou "plante serpent", est une plante vivace originaire d'Afrique tropicale. Elle est particulièrement appréciée pour sa résistance exceptionnelle et son esthétique moderne.
-
-Cette plante se distingue par ses feuilles verticales, charnues et pointues, disposées en rosette. Elle existe en plusieurs variétés, dont la plus courante est la 'Laurentii' avec ses bords jaunes.
-
-## Entretien
-
-### Lumière
-
-La Sansevieria est **très tolérante** en matière de lumière. Elle pousse bien en lumière indirecte, mais supporte également les endroits peu éclairés. Elle peut même survivre dans des pièces sans fenêtre, bien que sa croissance soit plus lente.
-
-En extérieur, elle apprécie le soleil du matin ou de fin de journée.
-
-### Arrosage
-
-C'est l'une des plantes les plus **résistantes à la sécheresse**. Arrosez **toutes les 3-4 semaines** en été et **tous les 2 mois** en hiver.
-
-L'excès d'eau est la principale cause de problèmes. Assurez-vous que le substrat est complètement sec avant d'arroser.
-
-### Température
-
-La Sansevieria supporte une large gamme de températures, **de 10°C à 30°C**. Elle est particulièrement résistante et peut même tolérer des températures plus fraîches en hiver.
-
-### Substrat
-
-Utilisez un mélange bien drainant : terreau pour plantes grasses, sable et perlite. La plante n'a pas besoin d'un substrat riche.
-
-## Propriétés
-
-- **Purificatrice d'air** : Élimine le formaldéhyde, le benzène et le trichloréthylène
-- **Résistance** : Survit à la négligence et aux conditions difficiles
-- **Durabilité** : Peut vivre pendant des décennies avec peu de soins
-- **Décoration** : Parfaite pour les intérieurs modernes et minimalistes
-
-## Multiplication
-
-### Bouturage de feuille
-
-1. Coupez une feuille saine en sections de 5-10 cm
-2. Laissez sécher les coupures pendant 24 heures
-3. Plantez verticalement dans un mélange de terreau et sable
-4. Maintenez légèrement humide
-5. Les racines apparaissent en 4-8 semaines
-
-### Division
-
-1. Retirez la plante du pot
-2. Séparer délicatement les rosettes
-3. Replantez chaque section dans son propre pot
-
-## Conseils
-
-- Parfaite pour les bureaux et les pièces avec peu de lumière naturelle
-- Idéale pour les voyageurs ou les personnes oublieuses
-- Les feuilles peuvent être nettoyées avec un chiffon humide
-- Tournez le pot régulièrement pour une croissance uniforme
-- La plante est non toxique pour les chats et les chiens
-
-## Variétés populaires
-
-- 'Laurentii' : bords jaunes
-- 'Hahnii' : compacte, feuilles courtes
-- 'Moonshine' : feuilles panachées de jaune
-- 'Twisted Sister' : feuilles torsadées
-- 'Futura Superba' : feuilles panachées de jaune vif

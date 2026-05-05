@@ -3,136 +3,76 @@ layout: plant
 title: Camomille
 slug: camomille
 latin_name: Matricaria chamomilla
-date: 2024-01-20
+date: 2026-04-29
 image: /assets/images/camomille.webp
 tags:
   - Extérieur
-  - Plante aromatique
+  - Aromatique
+  - Annuel
   - Médicinale
-  - Ornementale
-  - Facile
+  - Ornemental
 famille: Asteraceae
-origine: Europe et Asie occidentale
+type: annuel
+origine: Europe
 exposition: Plein soleil à mi-ombre
 arrosage: Modéré
 difficulte: Facile
 hauteur: 20 à 50 cm
+rusticite: -10°C
+sol: Bien drainé, léger
+ph: Neutre
+vegetation: Annuel
+floraison: Été
+fruits: Oui
+couleur_fleurs: Blanc
+parfum: Oui
+toxicite: Non toxique
 entretien:
   - Arrosage régulier
   - Taille après la floraison
-  - Paillage au pied
-  - Protection contre l'humidité excessive
-  - Récolte des fleurs en été
-excerpt: La camomille est une plante médicinale aux fleurs blanches et jaunes, connue pour ses propriétés apaisantes et digestives.
+  - Protection contre la sécheresse
+  - Renouvellement annuel
+  - Paillage léger
+description: La camomille est une plante médicinale très appréciée pour ses propriétés apaisantes. Ses fleurs sont utilisées en infusion pour calmer les nerfs.
+excerpt: La camomille est une plante apaisante, idéale pour les infusions et la médecine naturelle.
 calendrier:
   semis: [3, 4, 5]
-  taille: [2, 3, 9, 10]
-  bouturage: [3, 4, 5, 6, 7, 8]
+  taille: [7, 8]
+  bouturage: [5, 6]
   recolte: [6, 7, 8]
-compagnons: ["lavande", "romarin", "thym"]
+compagnons: ["lavande", "menthe", "basilic"]
+varietes:
+  - Matricaria chamomilla
+  - Chamaemelum nobile
+  - Matricaria recutita
+utilisations:
+  - Médicinale
+  - Ornementale
+  - Purificatrice d'air
+  - Cosmétique
+  - Aromatique
+problemes_courants:
+  - Pucerons
+  - Maladies fongiques
+  - Pourriture des racines
+soins_specifics:
+  - Sol bien drainé
+  - Plein soleil à mi-ombre
+  - Taille régulière
+  - Éviter l'humidité excessive
+astuces:
+  - Apaisante en infusion
+  - Repousse les moustiques
+  - Croissance rapide
+  - Idéal en bordure
+  - Utilisé en cosmétique
+multiplication:
+  - Semis
+  - Bouturage
+conseils:
+  - Plantez en plein soleil
+  - Arrosage régulier
+  - Sol drainé
+  - Taille régulière
+  - Protection contre la sécheresse
 ---
-
-## Description
-
-La *Matricaria chamomilla*, communément appelée camomille romaine ou camomille allemande, est une plante originaire d'Europe et d'Asie occidentale. Elle est reconnue pour ses fleurs blanches et jaunes et ses multiples propriétés thérapeutiques.
-
-La camomille est une plante médicinale emblématique, appréciée pour ses vertus apaisantes et digestives.
-
-## Entretien
-
-### Lumière
-
-La camomille a besoin de **plein soleil à mi-ombre** pour une bonne croissance. Elle apprécie les expositions ensoleillées mais supporte partiellement l'ombre.
-
-### Arrosage
-
-Arrosez **régulièrement**, en laissant sécher le substrat entre deux arrosages. La camomille n'aime pas l'humidité excessive.
-
-### Température
-
-La camomille est **rustique** et supporte bien le gel. Elle est adaptée aux climats tempérés.
-
-### Sol
-
-Privilégiez un **sol bien drainé**, riche en matière organique. La camomille s'adapte à différents types de terrain.
-
-## Variétés populaires
-
-- *Matricaria chamomilla* : camomille allemande
-- *Chamaemelum nobile* : camomille romaine
-- *Anthemis nobilis* : camomille noble
-- *Matricaria recutita* : camomille officinale
-- *Chamaemelum fuscatum* : camomille dorée
-
-## Multiplication
-
-### Semis
-
-1. Semez les graines au printemps
-2. Maintenez à 15-20°C avec une humidité modérée
-3. Les graines germent en 2-4 semaines
-4. Repiquez lorsque les plantules ont 4-5 feuilles
-
-### Bouturage
-
-1. Prélevez des boutures herbacées au printemps
-2. Trempez dans de l'hormone de bouturage
-3. Maintenez dans un mélange humide et ombragé
-4. Les boutures prennent généralement bien
-
-## Conseils
-
-- Parfait pour les jardins médicaux
-- Les fleurs sont apaisantes
-- La camomille repousse certains insectes
-- Évitez les sols gorgés d'eau
-- Protégez des vents froids
-
-## Utilisations
-
-### Médicinales
-
-- Infusions digestives
-- Traitement des troubles digestifs
-- Réduction du stress et de l'anxiété
-- Soulagement des maux de tête
-- Propriétés anti-inflammatoires
-
-### Aromatiques
-
-- Huiles essentielles
-- Saches parfumées
-- Parfums et cosmétiques
-- Savons et shampoings
-- Diffuseurs d'arôme
-
-### Culinaires
-
-- Cuisine méditerranéenne
-- Sirop de camomille
-- Pâtisseries
-- Boissons alcoolisées
-- Sel et sucre aromatisés
-
-## Problèmes courants
-
-- **Oïdium** : maladie fongique, traiter avec du soufre
-- **Pucerons** : traiter avec du savon noir
-- **Acariens** : augmenter l'humidité ambiante
-- **Carences** : apport de compost en automne
-
-## Soins spécifiques
-
-- Taillez après la floraison pour maintenir la forme
-- Paillage au pied pour conserver l'humidité
-- Récoltez les fleurs en été
-- Séchage des fleurs pour conservation
-- Protection contre l'humidité excessive
-
-## Astuces
-
-- Plantez plusieurs camomilles pour une meilleure pollinisation
-- Évitez les sols gorgés d'eau
-- La camomille est un répulsif naturel
-- Les fleurs séchées conservent leurs propriétés
-- La camomille attire les abeilles et les papillons

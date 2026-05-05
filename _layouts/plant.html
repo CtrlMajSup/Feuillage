@@ -1,9 +1,7 @@
 ---
 layout: default
 ---
-
 <article class="plant-detail">
-
   <header class="plant-header">
     <div class="plant-header__inner container">
       <div class="plant-breadcrumb">
@@ -76,112 +74,202 @@ layout: default
         </div>
         {% endif %}
       </div>
-
-
-  <div class="calendar-wrapper">
-  <h3>Calendrier de culture</h3>
-  <table class="garden-calendar">
-    <thead>
-      <tr>
-        <th>Action</th>
-        <th>Jan.</th>
-        <th>Fev.</th>
-        <th>Mar.</th>
-        <th>Avr.</th>
-        <th>Mai.</th>
-        <th>Juin</th>
-        <th>Juil.</th>
-        <th>Aou.</th>
-        <th>Sep.</th>
-        <th>Oct.</th>
-        <th>Nov.</th>
-        <th>Dec.</th>
-      </tr>
-    </thead>
-    <tbody>
-      {% assign actions = "semis,taille,bouturage,recolte" | split: "," %}
-      {% for action in actions %}
-      <tr>
-        <td class="action-name">{{ action | capitalize }}</td>
-        {% for month in (1..12) %}
-          {% if page.calendrier[action] contains month %}
-            <td class="active-month {{ action }}"></td>
-          {% else %}
-            <td></td>
-          {% endif %}
-        {% endfor %}
-      </tr>
-      {% endfor %}
-    </tbody>
-  </table>
-</div>
-
-
-
-
     </div>
-
-
-
   </header>
 
   <div class="plant-body container">
-    <div class="plant-content">
-      {{ content }}
+    <!-- Tab Navigation -->
+    <div class="plant-tabs">
+      <button class="tab-btn active" data-tab="description">Description</button>
+      <button class="tab-btn" data-tab="caracteristiques">Caractéristiques</button>
+      <button class="tab-btn" data-tab="entretien">Entretien</button>
+      <button class="tab-btn" data-tab="calendrier">Calendrier</button>
+      <button class="tab-btn" data-tab="associations">Associations</button>
     </div>
 
-    <aside class="plant-sidebar">
-      {% if page.entretien %}
-      <div class="sidebar-card">
-        <h3>Entretien</h3>
-        <ul>
-          {% for item in page.entretien %}
-          <li>{{ item }}</li>
-          {% endfor %}
-        </ul>
-      </div>
-      {% endif %}
+    <!-- Tab Content -->
+    <div class="tab-content">
+      <!-- Description Tab -->
+      <div id="description" class="tab-pane active">
+        <div class="plant-content">
+          {% if page.description %}
+          <section class="plant-section">
+            <h2>Description</h2>
+            <p>{{ page.description }}</p>
+          </section>
+          {% endif %}
 
-      {% if page.tags %}
-      <div class="sidebar-card">
-        <h3>Catégories</h3>
-        <div class="plant-tags">
-          {% for tag in page.tags %}
-          <a href="{{ '/plantes/' | relative_url }}?tag={{ tag | slugify }}" class="tag">{{ tag }}</a>
-          {% endfor %}
+          {% if page.utilisations %}
+          <section class="plant-section">
+            <h2>Utilisations</h2>
+            <ul>
+              {% for utilisation in page.utilisations %}
+              <li>{{ utilisation }}</li>
+              {% endfor %}
+            </ul>
+          </section>
+          {% endif %}
+
+          {% if page.varietes %}
+          <section class="plant-section">
+            <h2>Variétés populaires</h2>
+            <ul>
+              {% for variete in page.varietes %}
+              <li>{{ variete }}</li>
+              {% endfor %}
+            </ul>
+          </section>
+          {% endif %}
         </div>
       </div>
-      {% endif %}
-    </aside>
 
+      <!-- Caractéristiques Tab -->
+      <div id="caracteristiques" class="tab-pane">
+        <div class="plant-content">
+          {% if page.soins_specifics %}
+          <section class="plant-section">
+            <h2>Soins spécifiques</h2>
+            <ul>
+              {% for soin in page.soins_specifics %}
+              <li>{{ soin }}</li>
+              {% endfor %}
+            </ul>
+          </section>
+          {% endif %}
 
-<section class="associations">
-  <h2>Bonnes Associations (Guildes)</h2>
-  <div class="assoc-grid">
+          {% if page.problemes_courants %}
+          <section class="plant-section">
+            <h2>Problèmes courants</h2>
+            <ul>
+              {% for probleme in page.problemes_courants %}
+              <li>{{ probleme }}</li>
+              {% endfor %}
+            </ul>
+          </section>
+          {% endif %}
 
-    {% comment %} On cherche les plantes citées dans cette fiche {% endcomment %}
-    {% for slug_ami in page.compagnons %}
-      
-      {% comment %} On demande à Jekyll de trouver la plante qui a ce slug {% endcomment %}
-      {% assign ami = site.plants | where: "slug", slug_ami | first %}
-
-      {% if ami %}
-        <div class="assoc-card">
-          <a href="{{ ami.url | relative_url }}">
-            <img src="{{ ami.image | relative_url }}" alt="{{ ami.title }}">
-            <p>{{ ami.title }}</p>
-          </a>
+          {% if page.multiplication %}
+          <section class="plant-section">
+            <h2>Multiplication</h2>
+            <ul>
+              {% for methode in page.multiplication %}
+              <li>{{ methode }}</li>
+              {% endfor %}
+            </ul>
+          </section>
+          {% endif %}
         </div>
-      {% endif %}
+      </div>
 
-    {% endfor %}
+      <!-- Entretien Tab -->
+      <div id="entretien" class="tab-pane">
+        <div class="plant-content">
+          {% if page.entretien %}
+          <section class="plant-section">
+            <h2>Entretien</h2>
+            <ul>
+              {% for item in page.entretien %}
+              <li>{{ item }}</li>
+              {% endfor %}
+            </ul>
+          </section>
+          {% endif %}
 
+          {% if page.conseils %}
+          <section class="plant-section">
+            <h2>Conseils</h2>
+            <ul>
+              {% for conseil in page.conseils %}
+              <li>{{ conseil }}</li>
+              {% endfor %}
+            </ul>
+          </section>
+          {% endif %}
+
+          {% if page.astuces %}
+          <section class="plant-section">
+            <h2>Astuces</h2>
+            <ul>
+              {% for astuce in page.astuces %}
+              <li>{{ astuce }}</li>
+              {% endfor %}
+            </ul>
+          </section>
+          {% endif %}
+        </div>
+      </div>
+
+      <!-- Calendrier Tab -->
+      <div id="calendrier" class="tab-pane">
+        <div class="calendar-wrapper">
+          <h3 class="calendar-title">Calendrier de culture</h3>
+
+          <!-- Actions with timeline -->
+          <div class="calendar-actions">
+            {% assign months = "Jan,Fev,Mar,Avr,Mai,Juin,Juil,Aou,Sep,Oct,Nov,Dec" | split: "," %}
+            {% assign actions = "semis,taille,bouturage,recolte" | split: "," %}
+            {% for action in actions %}
+            <div class="calendar-action">
+              <div class="calendar-action-label">{{ action | capitalize }}</div>
+              <div class="calendar-timeline">
+                {% for i in (0..11) %}
+                  {% assign month_num = i | plus: 1 %}
+                  <div class="calendar-month-cell">
+                    {% if page.calendrier[action] contains month_num %}
+                      <div class="calendar-dot" title="{{ months[i] }}"></div>
+                    {% else %}
+                      <div class="calendar-dot-empty"></div>
+                    {% endif %}
+                    <div class="calendar-month-label">{{ months[i] }}</div>
+                  </div>
+                {% endfor %}
+              </div>
+            </div>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+
+      <!-- Associations Tab -->
+      <div id="associations" class="tab-pane">
+        <section class="associations">
+          <h2>Bonnes Associations (Guildes)</h2>
+          <div class="assoc-grid">
+            {% for slug_ami in page.compagnons %}
+              {% assign ami = site.plants | where: "slug", slug_ami | first %}
+              {% if ami %}
+                <div class="assoc-card">
+                  <a href="{{ ami.url | relative_url }}">
+                    <img src="{{ ami.image | relative_url }}" alt="{{ ami.title }}">
+                    <p>{{ ami.title }}</p>
+                  </a>
+                </div>
+              {% endif %}
+            {% endfor %}
+          </div>
+        </section>
+      </div>
+    </div>
   </div>
-</section>
-
-
-  </div>
-
-
-
 </article>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const tabBtns = document.querySelectorAll('.tab-btn');
+  const tabPanes = document.querySelectorAll('.tab-pane');
+
+  tabBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const tabId = btn.getAttribute('data-tab');
+
+      // Remove active class from all buttons and panes
+      tabBtns.forEach(b => b.classList.remove('active'));
+      tabPanes.forEach(p => p.classList.remove('active'));
+
+      // Add active class to clicked button and corresponding pane
+      btn.classList.add('active');
+      document.getElementById(tabId).classList.add('active');
+    });
+  });
+});
+</script>

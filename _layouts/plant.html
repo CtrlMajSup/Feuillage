@@ -77,7 +77,6 @@ layout: default
         {% endif %}
       </div>
 
-
   <div class="calendar-wrapper">
   <h3>Calendrier de culture</h3>
   <table class="garden-calendar">
@@ -116,18 +115,95 @@ layout: default
   </table>
 </div>
 
-
-
-
     </div>
-
-
 
   </header>
 
   <div class="plant-body container">
     <div class="plant-content">
-      {{ content }}
+      {% if page.description %}
+      <section class="plant-section">
+        <h2>Description</h2>
+        <p>{{ page.description }}</p>
+      </section>
+      {% endif %}
+
+      {% if page.utilisations %}
+      <section class="plant-section">
+        <h2>Utilisations</h2>
+        <ul>
+          {% for utilisation in page.utilisations %}
+          <li>{{ utilisation }}</li>
+          {% endfor %}
+        </ul>
+      </section>
+      {% endif %}
+
+      {% if page.varietes %}
+      <section class="plant-section">
+        <h2>Variétés populaires</h2>
+        <ul>
+          {% for variete in page.varietes %}
+          <li>{{ variete }}</li>
+          {% endfor %}
+        </ul>
+      </section>
+      {% endif %}
+
+      {% if page.problemes_courants %}
+      <section class="plant-section">
+        <h2>Problèmes courants</h2>
+        <ul>
+          {% for probleme in page.problemes_courants %}
+          <li>{{ probleme }}</li>
+          {% endfor %}
+        </ul>
+      </section>
+      {% endif %}
+
+      {% if page.soins_specifics %}
+      <section class="plant-section">
+        <h2>Soins spécifiques</h2>
+        <ul>
+          {% for soin in page.soins_specifics %}
+          <li>{{ soin }}</li>
+          {% endfor %}
+        </ul>
+      </section>
+      {% endif %}
+
+      {% if page.astuces %}
+      <section class="plant-section">
+        <h2>Astuces</h2>
+        <ul>
+          {% for astuce in page.astuces %}
+          <li>{{ astuce }}</li>
+          {% endfor %}
+        </ul>
+      </section>
+      {% endif %}
+
+      {% if page.multiplication %}
+      <section class="plant-section">
+        <h2>Multiplication</h2>
+        <ul>
+          {% for methode in page.multiplication %}
+          <li>{{ methode }}</li>
+          {% endfor %}
+        </ul>
+      </section>
+      {% endif %}
+
+      {% if page.conseils %}
+      <section class="plant-section">
+        <h2>Conseils</h2>
+        <ul>
+          {% for conseil in page.conseils %}
+          <li>{{ conseil }}</li>
+          {% endfor %}
+        </ul>
+      </section>
+      {% endif %}
     </div>
 
     <aside class="plant-sidebar">
@@ -153,7 +229,7 @@ layout: default
       </div>
       {% endif %}
     </aside>
-
+  </div>
 
 <section class="associations">
   <h2>Bonnes Associations (Guildes)</h2>
@@ -161,7 +237,7 @@ layout: default
 
     {% comment %} On cherche les plantes citées dans cette fiche {% endcomment %}
     {% for slug_ami in page.compagnons %}
-      
+
       {% comment %} On demande à Jekyll de trouver la plante qui a ce slug {% endcomment %}
       {% assign ami = site.plants | where: "slug", slug_ami | first %}
 
@@ -179,9 +255,6 @@ layout: default
   </div>
 </section>
 
-
   </div>
-
-
 
 </article>

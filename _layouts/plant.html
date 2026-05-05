@@ -202,34 +202,28 @@ layout: default
       <!-- Calendrier Tab -->
       <div id="calendrier" class="tab-pane">
         <div class="calendar-wrapper">
-          <h3>Calendrier de culture</h3>
-          <div class="calendar-table">
-            <div class="calendar-header">
-              <div class="calendar-cell"></div>
-              <div class="calendar-cell month-label">Jan</div>
-              <div class="calendar-cell month-label">Fev</div>
-              <div class="calendar-cell month-label">Mar</div>
-              <div class="calendar-cell month-label">Avr</div>
-              <div class="calendar-cell month-label">Mai</div>
-              <div class="calendar-cell month-label">Juin</div>
-              <div class="calendar-cell month-label">Juil</div>
-              <div class="calendar-cell month-label">Aou</div>
-              <div class="calendar-cell month-label">Sep</div>
-              <div class="calendar-cell month-label">Oct</div>
-              <div class="calendar-cell month-label">Nov</div>
-              <div class="calendar-cell month-label">Dec</div>
-            </div>
+          <h3 class="calendar-title">Calendrier de culture</h3>
+
+          <!-- Actions with timeline -->
+          <div class="calendar-actions">
+            {% assign months = "Jan,Fev,Mar,Avr,Mai,Juin,Juil,Aou,Sep,Oct,Nov,Dec" | split: "," %}
             {% assign actions = "semis,taille,bouturage,recolte" | split: "," %}
             {% for action in actions %}
-            <div class="calendar-row">
-              <div class="calendar-cell action-label">{{ action | capitalize }}</div>
-              {% for month in (1..12) %}
-                <div class="calendar-cell">
-                  {% if page.calendrier[action] contains month %}
-                    <span class="calendar-dot"></span>
-                  {% endif %}
-                </div>
-              {% endfor %}
+            <div class="calendar-action">
+              <div class="calendar-action-label">{{ action | capitalize }}</div>
+              <div class="calendar-timeline">
+                {% for i in (0..11) %}
+                  {% assign month_num = i | plus: 1 %}
+                  <div class="calendar-month-cell">
+                    {% if page.calendrier[action] contains month_num %}
+                      <div class="calendar-dot" title="{{ months[i] }}"></div>
+                    {% else %}
+                      <div class="calendar-dot-empty"></div>
+                    {% endif %}
+                    <div class="calendar-month-label">{{ months[i] }}</div>
+                  </div>
+                {% endfor %}
+              </div>
             </div>
             {% endfor %}
           </div>

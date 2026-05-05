@@ -3,128 +3,76 @@ layout: plant
 title: Épinard
 slug: épinard
 latin_name: Spinacia oleracea
-date: 2024-05-05
+date: 2026-04-29
 image: /assets/images/épinard.webp
 tags:
   - Extérieur
-  - Plante potagère
-  - Légume
-  - Résistante
-  - Facile
+  - Annuel
+  - Culinare
+  - Potager
+  - Feuille
 famille: Amaranthaceae
+type: annuel
 origine: Asie centrale
-exposition: Mi-ombre à ombre légère
-arrosage: Régulier
+exposition: Plein soleil à mi-ombre
+arrosage: Modéré
 difficulte: Facile
-hauteur: 15 à 30 cm
+hauteur: 20 à 30 cm
+rusticite: -10°C
+sol: Bien drainé, riche, humide
+ph: Neutre
+vegetation: Annuel
+floraison: Été
+fruits: Oui
+couleur_fleurs: Vert
+parfum: Non
+toxicite: Non toxique
 entretien:
   - Arrosage régulier
-  - Binage pour éliminer les mauvaises herbes
-  - Paillage au pied
-  - Protection contre les maladies
-  - Récolte des feuilles en été
-excerpt: L'épinard est une plante potagère aux feuilles vertes, connue pour ses propriétés nutritives et son goût frais.
+  - Taille après la floraison
+  - Protection contre la sécheresse
+  - Renouvellement annuel
+  - Paillage pour conserver l'humidité
+description: L'épinard est une plante annuelle très appréciée pour ses feuilles utilisées en cuisine. Il est idéal pour les potagers et les jardins.
+excerpt: L'épinard est une plante annuelle, idéale pour la cuisine et les potagers.
 calendrier:
   semis: [3, 4, 5]
-  taille: [2, 3, 9, 10]
-  bouturage: [3, 4, 5, 6, 7, 8]
-  recolte: [6, 7, 8]
-compagnons: ["carotte", "œillet d'Inde", "poireau"]
+  taille: [7, 8]
+  bouturage: [5, 6]
+  recolte: [6, 7, 8, 9]
+compagnons: ["tomate", "poivron", "menthe"]
+varietes:
+  - Spinacia oleracea
+  - Spinacia oleracea 'Géant d'hiver'
+  - Spinacia oleracea 'Monstrueux de Viroflay'
+utilisations:
+  - Culinare
+  - Ornementale
+  - Purificatrice d'air
+  - Potager
+  - Feuille
+problemes_courants:
+  - Pucerons
+  - Maladies fongiques
+  - Pourriture des racines
+soins_specifics:
+  - Sol bien drainé et humide
+  - Plein soleil à mi-ombre
+  - Taille régulière
+  - Éviter l'humidité excessive
+astuces:
+  - Utilisé en cuisine
+  - Croissance rapide
+  - Idéal en potager
+  - Utilisé en salade
+  - Riche en fer
+multiplication:
+  - Semis
+  - Bouturage
+conseils:
+  - Plantez en plein soleil
+  - Arrosage régulier
+  - Sol drainé et humide
+  - Taille régulière
+  - Protection contre la sécheresse
 ---
-
-## Description
-
-Le *Spinacia oleracea*, communément appelé épinard, est une plante originaire d'Asie centrale. Il est reconnu pour ses feuilles vertes et ses propriétés nutritives.
-
-L'épinard est une plante potagère emblématique, appréciée pour ses vertus nutritives et son rôle dans la cuisine.
-
-## Entretien
-
-### Lumière
-
-L'épinard a besoin de **mi-ombre à ombre légère** pour une bonne croissance. Il apprécie les expositions fraîches et ombragées.
-
-### Arrosage
-
-Arrosez **régulièrement**, en évitant de mouiller les feuilles. L'épinard a besoin d'eau constante pour une bonne production.
-
-### Température
-
-L'épinard est **sensible à la chaleur** et doit être protégé en été. Il est adapté aux climats tempérés.
-
-### Sol
-
-Privilégiez un **sol bien drainé**, riche en matière organique. L'épinard s'adapte à différents types de terrain.
-
-## Variétés populaires
-
-- *Spinacia oleracea* : épinard commun
-- *Spinacia oleracea 'Géant d'hiver'* : épinard géant
-- *Spinacia oleracea 'Matador'* : épinard matador
-- *Spinacia oleracea 'Géant de Winter'* : épinard géant de winter
-- *Spinacia oleracea 'Monstrueux de Viroflay'* : épinard monstrueux
-
-## Multiplication
-
-### Semis
-
-1. Semez les graines au printemps
-2. Maintenez à 15-20°C avec une humidité modérée
-3. Les graines germent en 2-4 semaines
-4. Repiquez lorsque les plantules ont 4-5 feuilles
-
-### Bouturage
-
-1. Prélevez des boutures herbacées au printemps
-2. Trempez dans de l'hormone de bouturage
-3. Maintenez dans un mélange humide et ombragé
-4. Les boutures prennent généralement bien
-
-## Conseils
-
-- Parfait pour les jardins potagers
-- Les feuilles sont nutritives
-- L'épinard est polyvalent en cuisine
-- Évitez les sols gorgés d'eau
-- Protégez des vents froids
-
-## Utilisations
-
-### Culinaires
-
-- Salades
-- Soupes
-- Quiches
-- Pâtisseries
-- Boissons
-
-### Médicinales
-
-- Riche en vitamines
-- Propriétés antioxydantes
-- Amélioration de la digestion
-- Renforcement du système immunitaire
-- Propriétés diurétiques
-
-## Problèmes courants
-
-- **Mildiou** : maladie fongique, traiter avec du soufre
-- **Pucerons** : traiter avec du savon noir
-- **Acariens** : augmenter l'humidité ambiante
-- **Carences** : apport de compost en automne
-
-## Soins spécifiques
-
-- Binage pour éliminer les mauvaises herbes
-- Paillage au pied pour conserver l'humidité
-- Récoltez les feuilles jeunes
-- Protection contre les maladies fongiques
-- Rotation des cultures
-
-## Astuces
-
-- Plantez plusieurs épinards pour une meilleure pollinisation
-- Évitez les sols gorgés d'eau
-- L'épinard est un légume-feuille
-- Les feuilles jeunes ont plus de saveur
-- L'épinard attire les abeilles

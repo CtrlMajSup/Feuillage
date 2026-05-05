@@ -3,136 +3,77 @@ layout: plant
 title: Lavande
 slug: lavande
 latin_name: Lavandula angustifolia
-date: 2024-01-15
+date: 2026-04-29
 image: /assets/images/lavande.webp
 tags:
   - Extérieur
-  - Plante aromatique
-  - Médicinale
-  - Ornementale
-  - Résistante
+  - Méditerranéen
+  - Aromatique
+  - Vivace
+  - Ornemental
 famille: Lamiaceae
+type: vivace
 origine: Méditerranée
 exposition: Plein soleil
 arrosage: Faible
 difficulte: Facile
 hauteur: 30 à 60 cm
+rusticite: -15°C
+sol: Calcaire, sec, bien drainé
+ph: Alcalin
+vegetation: Vivace
+floraison: Été
+fruits: Non
+couleur_fleurs: Violet
+parfum: Oui
+toxicite: Non toxique (en usage culinaire)
 entretien:
-  - Arrosage modéré
+  - Arrosage minimal
   - Taille après la floraison
-  - Paillage au pied
+  - Paillage pour conserver l'humidité
   - Protection contre l'humidité excessive
-  - Récolte des fleurs en été
-excerpt: La lavande est une plante aromatique aux fleurs violettes, connue pour ses propriétés apaisantes et son parfum envoûtant.
+  - Renouvellement tous les 3-4 ans
+description: La lavande est une plante aromatique très appréciée pour son parfum envoûtant et ses fleurs violettes. Elle est idéale pour les jardins méditerranéens et les bordures.
+excerpt: La lavande est une plante aromatique parfumée, parfaite pour les jardins méditerranéens et les bordures.
 calendrier:
-  semis: [3, 4, 5]
-  taille: [2, 3, 9, 10]
-  bouturage: [3, 4, 5, 6, 7, 8]
+  semis: [3, 4]
+  taille: [9, 10]
+  bouturage: [8, 9]
   recolte: [6, 7, 8]
 compagnons: ["romarin", "thym", "sauge"]
+varietes:
+  - Lavandula angustifolia
+  - Lavandula x intermedia
+  - Lavandula stoechas
+utilisations:
+  - Aromatique
+  - Ornementale
+  - Médicinale
+  - Culinare
+  - Parfum
+problemes_courants:
+  - Oïdium
+  - Pucerons
+  - Pourriture des racines
+soins_specifics:
+  - Sol bien drainé
+  - Plein soleil obligatoire
+  - Taille après floraison
+  - Éviter l'humidité
+astuces:
+  - Parfum apaisant
+  - Repousse les moustiques
+  - Sèche bien pour usage culinaire
+  - Idéale en bordure
+  - Résistante au froid
+multiplication:
+  - Bouturage
+  - Division
+  - Semis
+conseils:
+  - Plantez en plein soleil
+  - Arrosage minimal
+  - Sol drainé
+  - Taille après floraison
+  - Protection contre l'humidité
 ---
-
-## Description
-
-La *Lavandula angustifolia*, communément appelée lavande vraie ou lavande officinale, est une plante originaire de la région méditerranéenne. Elle est reconnue pour ses fleurs violettes parfumées et ses multiples propriétés thérapeutiques.
-
-La lavande est une plante emblématique des jardins méditerranéens, appréciée pour son parfum apaisant et ses vertus relaxantes.
-
-## Entretien
-
-### Lumière
-
-La lavande a besoin de **plein soleil** pour une floraison abondante. Elle apprécie les expositions chaudes et ensoleillées.
-
-### Arrosage
-
-Arrosez **modérément**, en laissant sécher le substrat entre deux arrosages. La lavande est **résistante à la sécheresse** et n'aime pas l'humidité excessive.
-
-### Température
-
-La lavande est **rustique** et supporte bien le gel. Elle est adaptée aux climats méditerranéens et tempérés.
-
-### Sol
-
-Privilégiez un **sol bien drainé**, pauvre et caillouteux. La lavande craint les sols humides et argileux.
-
-## Variétés populaires
-
-- *Lavandula angustifolia* : lavande vraie
-- *Lavandula latifolia* : lavande aspic
-- *Lavandula x intermedia* : lavande hybride
-- *Lavandula stoechas* : lavande papillon
-- *Lavandula dentata* : lavande dentée
-
-## Multiplication
-
-### Bouturage
-
-1. Prélevez des boutures semi-aoûtées en été
-2. Trempez dans de l'hormone de bouturage
-3. Maintenez dans un mélange sableux et sec
-4. Les boutures prennent en 4-6 semaines
-
-### Semis
-
-1. Semez les graines au printemps
-2. Maintenez à 15-20°C avec une humidité modérée
-3. Les graines germent en 2-4 semaines
-4. Repiquez lorsque les plantules ont 4-5 feuilles
-
-## Conseils
-
-- Parfait pour les jardins méditerranéens
-- Les fleurs sont parfumées et apaisantes
-- La lavande repousse les moustiques
-- Évitez les sols gorgés d'eau
-- Protégez des vents froids
-
-## Utilisations
-
-### Médicinales
-
-- Infusions relaxantes
-- Traitement des insomnies
-- Réduction du stress et de l'anxiété
-- Soulagement des maux de tête
-- Propriétés anti-inflammatoires
-
-### Aromatiques
-
-- Huiles essentielles
-- Saches parfumées
-- Parfums et cosmétiques
-- Savons et shampoings
-- Diffuseurs d'arôme
-
-### Culinaires
-
-- Cuisine méditerranéenne
-- Sirop de lavande
-- Pâtisseries
-- Boissons alcoolisées
-- Sel et sucre aromatisés
-
-## Problèmes courants
-
-- **Oïdium** : maladie fongique, traiter avec du soufre
-- **Pucerons** : traiter avec du savon noir
-- **Acariens** : augmenter l'humidité ambiante
-- **Carences** : apport de compost en automne
-
-## Soins spécifiques
-
-- Taillez après la floraison pour maintenir la forme
-- Paillage au pied pour conserver l'humidité
-- Récoltez les fleurs en été
-- Séchage des fleurs pour conservation
-- Protection contre l'humidité excessive
-
-## Astuces
-
-- Plantez plusieurs lavandes pour une meilleure pollinisation
-- Évitez les sols gorgés d'eau
-- La lavande est un répulsif naturel
-- Les fleurs séchées conservent leur parfum
-- La lavande attire les abeilles et les papillons

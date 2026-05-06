@@ -794,3 +794,25 @@ ul { list-style: none; }
   color: #2d5a27;
   font-weight: bold;
 }
+
+
+.lightbox {
+    display: none;
+    position: fixed;
+    z-index: 999;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0,0,0,0.8);
+    text-align: center;
+}
+
+.lightbox:target {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.lightbox img {
+    max-width: 90%;
+    max-height: 80%;
+}

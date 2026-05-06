@@ -30,8 +30,16 @@ layout: default
 
         {% if page.image %}
         <div class="plant-header__image">
-          <img src="{{ page.image | relative_url }}" alt="{{ page.title }}" loading="eager">
+          <a href="#img1">
+            <img src="{{ page.image | relative_url }}" alt="{{ page.title }}" loading="eager">
+          </a>
         </div>
+
+        <!-- La structure de la lightbox -->
+        <a href="#_" class="lightbox" id="img1">
+          <img src="{{ page.image | relative_url }}">
+        </a>
+
         {% endif %}
       </div>
 

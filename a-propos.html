@@ -118,7 +118,9 @@ canvas {
 </style>
 
 <!-- Chargement de vis.js (via CDN pour être sûr que ça marche tout de suite) -->
-<script src="https://unpkg.com/vis-network/standalone/umd/vis-network.min.js"></script>
+<!-- <script src="https://unpkg.com/vis-network/standalone/umd/vis-network.min.js"></script> -->
+<!-- Chargement de la bibliothèque locale comme dans ton exemple -->
+<script src="{{ '/assets/js/vis-network.min.js' | relative_url }}"></script>
 
 <script type="text/javascript">
   function draw() {
@@ -139,7 +141,17 @@ canvas {
           {% for compagnon in plante.compagnons %}
           { 
             from: "{{ plante.title | slugify }}", 
-            to: "{{ compagnon | slugify }}" 
+            to: "{{ compagnon | slugify }}",
+            type: "companion"
+          },
+          {% endfor %}
+        {% endif %}
+        {% if plante.enemies %}
+          {% for enemy in plante.enemies %}
+          { 
+            from: "{{ plante.title | slugify }}", 
+            to: "{{ enemy | slugify }}",
+            type: "enemy"
           },
           {% endfor %}
         {% endif %}
@@ -147,9 +159,32 @@ canvas {
     ];
 
     var container = document.getElementById("mynetwork");
+    
+    // Séparer les liens par type et appliquer les styles
+    var companionEdges = rawEdges.filter(e => e.type === "companion").map(e => ({
+      from: e.from,
+      to: e.to,
+      color: { color: "#e5e7eb", highlight: "#10b981", hover: "#d1d5db" },
+      width: 1.5,
+      smooth: { type: "continuous", roundness: 0.5 },
+      length: 150
+    }));
+    
+    var enemyEdges = rawEdges.filter(e => e.type === "enemy").map(e => ({
+      from: e.from,
+      to: e.to,
+      color: { color: "#fca5a5", highlight: "#ef4444", hover: "#f87171" },
+      width: 2,
+      dashes: [5, 5],
+      smooth: { type: "continuous", roundness: 0.3 },
+      length: 350  // 2x plus long pour éloigner
+    }));
+    
+    var allEdges = companionEdges.concat(enemyEdges);
+    
     var data = {
       nodes: new vis.DataSet(rawNodes),
-      edges: new vis.DataSet(rawEdges),
+      edges: new vis.DataSet(allEdges),
     };
 
     // 2. Configuration visuelle "Botanique Minimaliste"
@@ -172,9 +207,7 @@ canvas {
         shadow: { enabled: true, color: "rgba(16, 185, 129, 0.08)", size: 8, x: 0, y: 2 }
       },
       edges: {
-        width: 1.5,
-        color: { color: "#e5e7eb", highlight: "#10b981", hover: "#d1d5db" },
-        smooth: { type: "continuous", roundness: 0.5 }
+        smooth: { type: "continuous" }
       },
       interaction: {
         hover: true,

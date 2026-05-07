@@ -1,7 +1,9 @@
 <header class="site-header">
   <div class="header-inner container">
     <a href="{{ '/' | relative_url }}" class="site-logo">
-      <span class="logo-icon">⬡</span>
+      <span class="logo-icon">
+        <img src="{{ 'assets/images/logo/logo.webp' | relative_url }}" alt="Logo {{ site.title }}" class="logo-img">
+      </span>
       <span class="logo-text">{{ site.title }}</span>
     </a>
 

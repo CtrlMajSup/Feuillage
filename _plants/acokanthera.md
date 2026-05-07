@@ -43,6 +43,7 @@ calendrier:
   bouturage: [2, 3]
   recolte: [1, 2]
 compagnons: ["lavande", "romarin", "thym"]
+enemies: ["lettuce"]
 varietes:
   - Acokanthera oppositifolia
   - Acokanthera schimperi

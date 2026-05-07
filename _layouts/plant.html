@@ -281,3 +281,154 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 });
 </script>
+
+
+
+<!-- Bouton d'export -->
+<button id="export-pdf">Télécharger en PDF</button>
+
+<!-- Zone cachée pour générer le QR Code -->
+<div id="qrcode-canvas" style="display:none;"></div>
+
+<!-- Markdown brut -->
+<script id="markdown-raw" type="text/plain">
+TITLE: {{ page.title }}
+LATIN_NAME: {{ page.latin_name }}
+FAMILLE: {{ page.famille }}
+TYPE: {{ page.type }}
+ORIGINE: {{ page.origine }}
+EXPOSITION: {{ page.exposition }}
+ARROSAGE: {{ page.arrosage }}
+DIFFICULTE: {{ page.difficulte }}
+HAUTEUR: {{ page.hauteur }}
+RUSTICITE: {{ page.rusticite }}
+SOL: {{ page.sol }}
+PH: {{ page.ph }}
+VEGETATION: {{ page.vegetation }}
+FLORAISON: {{ page.floraison }}
+FRUITS: {{ page.fruits }}
+COULEUR_FLEURS: {{ page.couleur_fleurs }}
+PARFUM: {{ page.parfum }}
+TOXICITE: {{ page.toxicite }}
+
+TAGS:
+{% for tag in page.tags %}- {{ tag }}
+{% endfor %}
+
+ENTRETIEN:
+{% for item in page.entretien %}- {{ item }}
+{% endfor %}
+
+ASTUCES:
+{% for item in page.astuces %}- {{ item }}
+{% endfor %}
+
+CONSEILS:
+{% for item in page.conseils %}- {{ item }}
+{% endfor %}
+
+DESCRIPTION:
+{{ page.description }}
+
+EXCERPT:
+{{ page.excerpt }}
+
+CONTENU:
+{{ content | strip_html | strip }}
+</script>
+
+<!-- Scripts -->
+<script src="{{ '/assets/js/jspdf.umd.min.js' | relative_url }}"></script>
+<script src="{{ '/assets/js/qrcode.min.js' | relative_url }}"></script>
+
+<script>
+async function genererMaFiche() {
+    console.log("Début génération PDF");
+
+    const { jsPDF } = window.jspdf;
+
+    const doc = new jsPDF({
+        orientation: "p",
+        unit: "mm",
+        format: "a4"
+    });
+
+    // =========================
+    // 1. Génération du QR Code
+    // =========================
+    const qrDiv = document.getElementById("qrcode-canvas");
+    qrDiv.innerHTML = "";
+
+    new QRCode(qrDiv, {
+        text: window.location.href,
+        width: 256,
+        height: 256
+    });
+
+    // Attendre que le canvas soit créé
+    await new Promise(resolve => setTimeout(resolve, 300));
+
+    const canvas = qrDiv.querySelector("canvas");
+
+    if (!canvas) {
+        console.error("QR Code non généré");
+        return;
+    }
+
+    const qrData = canvas.toDataURL("image/png");
+
+    // =========================
+    // 2. Titre
+    // =========================
+    doc.setFont("helvetica", "bold");
+    doc.setFontSize(22);
+    doc.text("{{ page.title }}", 20, 25);
+
+    // =========================
+    // 3. Chargement image
+    // =========================
+    const img = new Image();
+    img.crossOrigin = "anonymous";
+
+    img.src = "{{ page.image | relative_url }}";
+    console.log(img.src)
+
+    img.onload = function () {
+
+        console.log("Image chargée");
+
+        // Image principale
+        doc.addImage(img, "WEBP", 20, 40, 100, 60);
+
+        // QR Code
+        doc.addImage(qrData, "PNG", 140, 40, 45, 45);
+
+        // =========================
+        // 4. Contenu markdown
+        // =========================
+        const mdBrut = document.getElementById("markdown-raw").textContent;
+
+        doc.setFont("courier", "normal");
+        doc.setFontSize(10);
+
+        const texteCoupe = doc.splitTextToSize(mdBrut, 170);
+
+        doc.text(texteCoupe, 20, 120);
+
+        // =========================
+        // 5. Sauvegarde PDF
+        // =========================
+        doc.save("{{ page.title | slugify }}.pdf");
+
+        console.log("PDF généré");
+    };
+
+    img.onerror = function () {
+        console.error("Impossible de charger l'image");
+    };
+}
+
+document
+    .getElementById("export-pdf")
+    .addEventListener("click", genererMaFiche);
+</script>

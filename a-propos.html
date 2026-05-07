@@ -3,12 +3,168 @@ layout: default
 title: À propos
 permalink: /a-propos/
 ---
+    <!-- Section Graphique -->
+    <div class="graph-container">
+      <div id="mynetwork"></div>
+      <div class="graph-hint">Explorez les compagnonnages : déplacez les bulles ou cliquez pour voir une fiche.</div>
+    </div>
 
-<div class="container">
-  <div class="about-page">
-    <h1>À propos de Flora</h1>
-    <p>Flora est une encyclopédie botanique moderne, conçue pour rendre la connaissance des plantes accessible à tous — du jardinier débutant au botaniste passionné.</p>
-    <p>Chaque fiche plante est rédigée avec soin et regroupe les informations essentielles : description, origine, conseils d'entretien, exposition, arrosage et plus encore.</p>
-    <p>Ce projet est construit avec <a href="https://jekyllrb.com" target="_blank" style="color: var(--color-accent);">Jekyll</a> et hébergé librement sur GitHub Pages.</p>
-  </div>
-</div>
+<style type="text/css">
+
+/* Conteneur global */
+.graph-container {
+  position: relative;
+  width: 100%;
+  height: 100vh;              /* prend toute la hauteur de l'écran */
+  max-height: 100vh;
+  padding: 10vh;
+  margin: 0;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Zone du graphe */
+#mynetwork {
+  flex: 1;                    /* prend tout l’espace disponible */
+  width: 100%;
+  height: 100%;
+  min-height: 300px;          /* sécurité */
+  border-radius: 8px;
+}
+
+/* Texte d’aide */
+.graph-hint {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0, 0, 0, 0.6);
+  color: #fff;
+  font-size: 14px;
+  padding: 6px 12px;
+  border-radius: 20px;
+  pointer-events: none;
+}
+
+/* Responsive tablette */
+@media (max-width: 1024px) {
+  .graph-container {
+    height: 80vh;
+  }
+}
+
+/* Responsive mobile */
+@media (max-width: 600px) {
+  .graph-container {
+    height: 70vh;
+  }
+
+  .graph-hint {
+    font-size: 12px;
+    padding: 4px 10px;
+  }
+}
+
+  /* Pour éviter que le canvas ne crée de scrollbar moche */
+  canvas { outline: none; }
+</style>
+
+<!-- Chargement de vis.js (via CDN pour être sûr que ça marche tout de suite) -->
+<script src="https://unpkg.com/vis-network/standalone/umd/vis-network.min.js"></script>
+
+<script type="text/javascript">
+  function draw() {
+    // 1. Les données des plantes extraites du Frontmatter Jekyll
+    var rawNodes = [
+      {% for plante in site.plants %}
+      { 
+        id: "{{ plante.title | slugify }}", 
+        label: "{{ plante.title }}", 
+        url: "{{ plante.url | relative_url }}" 
+      },
+      {% endfor %}
+    ];
+
+    var rawEdges = [
+      {% for plante in site.plants %}
+        {% if plante.compagnons %}
+          {% for compagnon in plante.compagnons %}
+          { 
+            from: "{{ plante.title | slugify }}", 
+            to: "{{ compagnon | slugify }}" 
+          },
+          {% endfor %}
+        {% endif %}
+      {% endfor %}
+    ];
+
+    var container = document.getElementById("mynetwork");
+    var data = {
+      nodes: new vis.DataSet(rawNodes),
+      edges: new vis.DataSet(rawEdges),
+    };
+
+    // 2. Configuration visuelle "Botanique Moderne"
+    var options = {
+      nodes: {
+        shape: "dot",
+        size: 28,
+        font: { 
+          size: 14, 
+          color: "#34495e", 
+          face: "Segoe UI, Roboto, Helvetica, Arial, sans-serif" 
+        },
+        color: {
+          background: "#ecfdf5", // Vert menthe très doux
+          border: "#10b981",    // Vert émeraude
+          highlight: { background: "#34d399", border: "#059669" },
+          hover: { background: "#d1fae5", border: "#10b981" }
+        },
+        borderWidth: 2,
+        shadow: { enabled: true, color: "rgba(0,0,0,0.05)", size: 10 }
+      },
+      edges: {
+        width: 2,
+        color: { color: "#e2e8f0", highlight: "#10b981", hover: "#cbd5e1" },
+        smooth: { type: "continuous", roundness: 0.4 }
+      },
+      interaction: {
+        hover: true,
+        tooltipDelay: 200,
+        hideEdgesOnDrag: false
+      },
+      physics: {
+        enabled: true,
+        barnesHut: {
+          gravitationalConstant: -4000,
+          centralGravity: 0.2,
+          springLength: 140,
+          springConstant: 0.05,
+          damping: 0.09
+        },
+        stabilization: { iterations: 150 }
+      }
+    };
+
+    var network = new vis.Network(container, data, options);
+
+    // 3. Gestion du clic pour ouvrir la page de la plante
+    network.on("click", function (params) {
+      if (params.nodes.length > 0) {
+        var nodeId = params.nodes[0];
+        var clickedNode = rawNodes.find(function(n) { return n.id === nodeId; });
+        if (clickedNode && clickedNode.url) {
+          window.location.href = clickedNode.url;
+        }
+      }
+    });
+
+    // Curseur pointer au survol
+    network.on("hoverNode", function () { container.style.cursor = 'pointer'; });
+    network.on("blurNode", function () { container.style.cursor = 'default'; });
+  }
+
+  // Lancement
+  window.onload = draw;
+</script>

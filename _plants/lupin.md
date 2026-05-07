@@ -3,136 +3,77 @@ layout: plant
 title: Lupin
 slug: lupin
 latin_name: Lupinus albus
-date: 2024-03-10
+date: 2026-04-29
 image: /assets/images/lupin.webp
 tags:
   - Extérieur
-  - Plante mellifère
+  - Vivace
+  - Ornemental
   - Engrais vert
-  - Ornementale
-  - Résistante
+  - Médicinale
 famille: Fabaceae
+type: vivace
 origine: Méditerranée
 exposition: Plein soleil
 arrosage: Modéré
 difficulte: Facile
 hauteur: 50 à 100 cm
+rusticite: -10°C
+sol: Bien drainé, pauvre
+ph: Alcalin
+vegetation: Vivace
+floraison: Été
+fruits: Oui
+couleur_fleurs: Bleu, rose, blanc
+parfum: Non
+toxicite: Toxique (graines)
 entretien:
   - Arrosage régulier
   - Taille après la floraison
-  - Paillage au pied
-  - Protection contre l'humidité excessive
-  - Récolte des graines en été
-excerpt: Le lupin est une plante mellifère aux fleurs colorées, connue pour fixer l'azote et attirer les abeilles.
+  - Protection contre la sécheresse
+  - Renouvellement tous les 3-4 ans
+  - Paillage léger
+description: Le lupin est une plante vivace très appréciée pour ses fleurs colorées et ses propriétés enrichissantes pour le sol. Il est idéal pour les jardins et les bordures.
+excerpt: Le lupin est une plante vivace aux fleurs colorées, idéale pour enrichir le sol et décorer les jardins.
 calendrier:
   semis: [3, 4, 5]
-  taille: [2, 3, 9, 10]
-  bouturage: [3, 4, 5, 6, 7, 8]
+  taille: [7, 8]
+  bouturage: [5, 6]
   recolte: [6, 7, 8]
 compagnons: ["lavande", "romarin", "thym"]
+varietes:
+  - Lupinus albus
+  - Lupinus polyphyllus
+  - Lupinus arboreus
+utilisations:
+  - Ornementale
+  - Engrais vert
+  - Purificatrice d'air
+  - Attire les pollinisateurs
+  - Médicinale
+problemes_courants:
+  - Pucerons
+  - Maladies fongiques
+  - Pourriture des racines
+soins_specifics:
+  - Sol bien drainé
+  - Plein soleil obligatoire
+  - Taille régulière
+  - Éviter l'humidité excessive
+astuces:
+  - Enrichit le sol
+  - Attire les abeilles
+  - Croissance rapide
+  - Idéal en bordure
+  - Utilisé en engrais vert
+multiplication:
+  - Semis
+  - Bouturage
+  - Division
+conseils:
+  - Plantez en plein soleil
+  - Arrosage régulier
+  - Sol drainé
+  - Taille régulière
+  - Protection contre la sécheresse
 ---
-
-## Description
-
-Le *Lupinus albus*, communément appelé lupin blanc, est une plante originaire de la région méditerranéenne. Il est reconnu pour ses fleurs colorées et son pouvoir de fixation de l'azote.
-
-Le lupin est une plante mellifère emblématique, appréciée pour ses vertus écologiques et son rôle dans l'agriculture biologique.
-
-## Entretien
-
-### Lumière
-
-Le lupin a besoin de **plein soleil** pour une bonne croissance. Il apprécie les expositions chaudes et ensoleillées.
-
-### Arrosage
-
-Arrosez **régulièrement**, en laissant sécher le substrat entre deux arrosages. Le lupin n'aime pas l'humidité excessive.
-
-### Température
-
-Le lupin est **rustique** et supporte bien le gel. Il est adapté aux climats tempérés.
-
-### Sol
-
-Privilégiez un **sol bien drainé**, riche en matière organique. Le lupin s'adapte à différents types de terrain.
-
-## Variétés populaires
-
-- *Lupinus albus* : lupin blanc
-- *Lupinus luteus* : lupin jaune
-- *Lupinus angustifolius* : lupin à feuilles étroites
-- *Lupinus polyphyllus* : lupin à nombreuses feuilles
-- *Lupinus arboreus* : lupin arborescent
-
-## Multiplication
-
-### Semis
-
-1. Semez les graines au printemps
-2. Maintenez à 15-20°C avec une humidité modérée
-3. Les graines germent en 2-4 semaines
-4. Repiquez lorsque les plantules ont 4-5 feuilles
-
-### Bouturage
-
-1. Prélevez des boutures herbacées au printemps
-2. Trempez dans de l'hormone de bouturage
-3. Maintenez dans un mélange humide et ombragé
-4. Les boutures prennent généralement bien
-
-## Conseils
-
-- Parfait pour les jardins écologiques
-- Les fleurs attirent les abeilles
-- Le lupin fixe l'azote dans le sol
-- Évitez les sols gorgés d'eau
-- Protégez des vents froids
-
-## Utilisations
-
-### Écologiques
-
-- Plante mellifère pour les abeilles
-- Engrais vert pour améliorer les sols
-- Couverture végétale
-- Protection des sols
-- Amélioration de la biodiversité
-
-### Ornementales
-
-- Fleurs décoratives
-- Massifs colorés
-- Bordures de jardin
-- Aménagement des parcs
-- Intégration dans les projets de renaturation
-
-### Agricoles
-
-- Culture de couverture
-- Prévention de l'érosion
-- Amélioration de la structure du sol
-- Réduction des mauvaises herbes
-- Favorisation de la vie microbienne
-
-## Problèmes courants
-
-- **Oïdium** : maladie fongique, traiter avec du soufre
-- **Pucerons** : traiter avec du savon noir
-- **Acariens** : augmenter l'humidité ambiante
-- **Carences** : apport de compost en automne
-
-## Soins spécifiques
-
-- Taillez après la floraison pour maintenir la forme
-- Paillage au pied pour conserver l'humidité
-- Récoltez les graines en été
-- Séchage des graines pour conservation
-- Protection contre l'humidité excessive
-
-## Astuces
-
-- Plantez plusieurs lupins pour une meilleure pollinisation
-- Évitez les sols gorgés d'eau
-- Le lupin est un aimant à abeilles
-- Les graines séchées conservent leur parfum
-- Le lupin attire les pollinisateurs

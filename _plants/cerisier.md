@@ -3,127 +3,77 @@ layout: plant
 title: Cerisier
 slug: cerisier
 latin_name: Prunus avium
-date: 2024-06-20
+date: 2026-04-29
 image: /assets/images/cerisier.webp
 tags:
   - Extérieur
   - Arbre
-  - Résistante
-  - Facile
+  - Ornemental
+  - Fruitier
+  - Persistant
 famille: Rosaceae
+type: arbre
 origine: Europe
 exposition: Plein soleil
 arrosage: Modéré
-difficulte: Facile
-hauteur: 10 à 20 m
+difficulte: Moyenne
+hauteur: 5 à 15 m
+rusticite: -20°C
+sol: Bien drainé, riche
+ph: Neutre
+vegetation: Caduc
+floraison: Printemps
+fruits: Oui
+couleur_fleurs: Blanc
+parfum: Oui
+toxicite: Non toxique
 entretien:
-  - Arrosage modéré
-  - Taille des branches mortes
-  - Protection contre les maladies
-  - Paillage au pied
-  - Taille de formation
-excerpt: Le cerisier est un arbre fruitier aux fleurs blanches, connu pour ses cerises juteuses et son feuillage printanier.
+  - Arrosage régulier
+  - Taille après la floraison
+  - Protection contre la sécheresse
+  - Renouvellement tous les 5-10 ans
+  - Paillage pour conserver l'humidité
+description: Le cerisier est un arbre très apprécié pour ses fleurs blanches et ses fruits utilisés en cuisine. Il est idéal pour les jardins et les parcs.
+excerpt: Le cerisier est un arbre ornemental et fruitier, idéal pour les jardins et les parcs.
 calendrier:
-  semis: [3, 4, 5]
-  taille: [2, 3, 9, 10]
-  bouturage: [3, 4, 5, 6, 7, 8]
-  recolte: [6, 7, 8]
-compagnons: ["lavande", "thym", "œillet d'Inde"]
+  semis: [4, 5]
+  taille: [9, 10]
+  bouturage: [8, 9]
+  recolte: [6, 7]
+compagnons: ["lavande", "romarin", "thym"]
+varietes:
+  - Prunus avium
+  - Prunus avium 'Bigarreau'
+  - Prunus avium 'Montmorency'
+utilisations:
+  - Ornementale
+  - Fruitière
+  - Parfum
+  - Ombre
+  - Purificatrice d'air
+problemes_courants:
+  - Pucerons
+  - Cochenilles
+  - Maladies fongiques
+soins_specifics:
+  - Sol bien drainé
+  - Plein soleil obligatoire
+  - Taille légère
+  - Éviter l'humidité excessive
+astuces:
+  - Parfum envoûtant
+  - Idéal pour les parcs
+  - Utilisé en cuisine
+  - Résiste au froid
+  - Offre une belle ombre
+multiplication:
+  - Semis
+  - Bouturage
+  - Greffage
+conseils:
+  - Plantez en plein soleil
+  - Arrosage régulier
+  - Sol drainé
+  - Taille légère
+  - Protection contre le gel
 ---
-
-## Description
-
-Le *Prunus avium*, communément appelé cerisier, est un arbre originaire d'Europe. Il est reconnu pour ses fleurs blanches et ses cerises juteuses.
-
-Le cerisier est un arbre emblématique, apprécié pour son feuillage printanier et son rôle dans les vergers.
-
-## Entretien
-
-### Lumière
-
-Le cerisier a besoin de **plein soleil** pour une bonne croissance et une production abondante. Il apprécie les expositions chaudes et ensoleillées.
-
-### Arrosage
-
-Arrosez **modérément**, en évitant de mouiller les feuilles. Le cerisier n'aime pas l'humidité excessive.
-
-### Température
-
-Le cerisier est **rustique** et supporte bien le gel. Il est adapté aux climats tempérés.
-
-### Sol
-
-Privilégiez un **sol bien drainé**, riche en matière organique. Le cerisier s'adapte à différents types de terrain.
-
-## Variétés populaires
-
-- *Prunus avium* : cerisier commun
-- *Prunus avium 'Bigarreau'* : cerisier bigarreau
-- *Prunus avium 'Montmorency'* : cerisier montmorency
-- *Prunus avium 'Griotte'* : cerisier griotte
-- *Prunus avium 'Merisier'* : cerisier merisier
-
-## Multiplication
-
-### Semis
-
-1. Semez les graines au printemps
-2. Maintenez à 15-20°C avec une humidité modérée
-3. Les graines germent en 2-4 semaines
-4. Repiquez lorsque les plantules ont 4-5 feuilles
-
-### Bouturage
-
-1. Prélevez des boutures herbacées au printemps
-2. Trempez dans de l'hormone de bouturage
-3. Maintenez dans un mélange humide et ombragé
-4. Les boutures prennent généralement bien
-
-## Conseils
-
-- Parfait pour les jardins et les vergers
-- Les fruits sont nutritifs
-- Le cerisier est polyvalent en cuisine
-- Évitez les sols gorgés d'eau
-- Protégez des vents froids
-
-## Utilisations
-
-### Culinaires
-
-- Salades
-- Soupes
-- Ragoûts
-- Pâtisseries
-- Boissons
-
-### Médicinales
-
-- Riche en vitamines
-- Propriétés antioxydantes
-- Amélioration de la digestion
-- Renforcement du système immunitaire
-- Propriétés diurétiques
-
-## Problèmes courants
-
-- **Chancre** : maladie fongique, traiter avec du soufre
-- **Pucerons** : traiter avec du savon noir
-- **Acariens** : augmenter l'humidité ambiante
-- **Carences** : apport de compost en automne
-
-## Soins spécifiques
-
-- Taille des branches mortes
-- Paillage au pied pour conserver l'humidité
-- Récoltez les fruits mûrs
-- Protection contre les maladies fongiques
-- Rotation des cultures
-
-## Astuces
-
-- Plantez plusieurs cerisiers pour une meilleure pollinisation
-- Évitez les sols gorgés d'eau
-- Le cerisier est un arbre à fruits
-- Les fruits jeunes ont plus de saveur
-- Le cerisier attire les abeilles

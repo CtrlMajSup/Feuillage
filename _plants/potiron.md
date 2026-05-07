@@ -2,129 +2,77 @@
 layout: plant
 title: Potiron
 slug: potiron
-latin_name: Cucurbita maxima
-date: 2024-05-25
+latin_name: Cucurbita pepo
+date: 2026-04-29
 image: /assets/images/potiron.webp
 tags:
   - Extérieur
-  - Plante potagère
-  - Légume
-  - Résistante
-  - Facile
+  - Annuel
+  - Culinare
+  - Potager
+  - Grimpant
 famille: Cucurbitaceae
-origine: Amérique du Sud
+type: annuel
+origine: Amérique du Nord
 exposition: Plein soleil
-arrosage: Régulier
-difficulte: Facile
-hauteur: 30 à 100 cm
+arrosage: Modéré
+difficulte: Moyenne
+hauteur: 50 à 100 cm
+rusticite: Non rustique
+sol: Bien drainé, riche, humide
+ph: Neutre
+vegetation: Annuel
+floraison: Été
+fruits: Oui
+couleur_fleurs: Jaune
+parfum: Non
+toxicite: Non toxique
 entretien:
-  - Arrosage régulier au pied
-  - Paillage au pied
-  - Protection contre les maladies
-  - Récolte des fruits en automne
-  - Taille des feuilles si nécessaire
-excerpt: Le potiron est une plante potagère aux fruits orange, connue pour sa croissance rapide et son goût sucré.
+  - Arrosage régulier
+  - Taille après la floraison
+  - Protection contre la sécheresse
+  - Renouvellement annuel
+  - Paillage pour conserver l'humidité
+description: Le potiron est une plante annuelle très appréciée pour ses fruits utilisés en cuisine. Il est idéal pour les potagers et les jardins.
+excerpt: Le potiron est une plante annuelle, idéale pour la cuisine et les potagers.
 calendrier:
-  semis: [3, 4, 5]
-  taille: [2, 3, 9, 10]
-  bouturage: [3, 4, 5, 6, 7, 8]
-  recolte: [9, 10, 11]
-compagnons: ["carotte", "œillet d'Inde", "poireau"]
+  semis: [4, 5, 6]
+  taille: [7, 8]
+  bouturage: [5, 6]
+  recolte: [8, 9, 10]
+compagnons: ["tomate", "carotte", "basilic"]
+varietes:
+  - Cucurbita pepo
+  - Cucurbita pepo 'Ronde'
+  - Cucurbita pepo 'Longue'
+utilisations:
+  - Culinare
+  - Ornementale
+  - Purificatrice d'air
+  - Potager
+  - Salade
+problemes_courants:
+  - Pucerons
+  - Maladies fongiques
+  - Pourriture des racines
+soins_specifics:
+  - Sol bien drainé et humide
+  - Plein soleil obligatoire
+  - Taille régulière
+  - Éviter l'humidité excessive
+astuces:
+  - Utilisé en cuisine
+  - Croissance rapide
+  - Idéal en potager
+  - Utilisé en soupe
+  - Riche en vitamines
+multiplication:
+  - Semis
+  - Bouturage
+conseils:
+  - Plantez en plein soleil
+  - Arrosage régulier
+  - Sol drainé et humide
+  - Taille régulière
+  - Protection contre la sécheresse
 ---
-
-## Description
-
-La *Cucurbita maxima*, communément appelée potiron, est une plante originaire d'Amérique du Sud. Elle est reconnue pour ses fruits orange et sa croissance rapide.
-
-Le potiron est une plante potagère emblématique, appréciée pour ses vertus nutritives et son rôle dans la cuisine.
-
-## Entretien
-
-### Lumière
-
-Le potiron a besoin de **plein soleil** pour une bonne croissance et une production abondante. Il apprécie les expositions chaudes et ensoleillées.
-
-### Arrosage
-
-Arrosez **régulièrement au pied**, en évitant de mouiller les feuilles. Le potiron a besoin d'eau constante pour une bonne production.
-
-### Température
-
-Le potiron est **sensible au gel** et doit être protégé en hiver. Il est adapté aux climats tempérés.
-
-### Sol
-
-Privilégiez un **sol bien drainé**, riche en matière organique. Le potiron s'adapte à différents types de terrain.
-
-## Variétés populaires
-
-- *Cucurbita maxima* : potiron commun
-- *Cucurbita maxima 'Ronde'* : potiron rond
-- *Cucurbita maxima 'Long'* : potiron long
-- *Cucurbita maxima 'Géant'* : potiron géant
-- *Cucurbita maxima 'Blanc'* : potiron blanc
-
-## Multiplication
-
-### Semis
-
-1. Semez les graines au printemps
-2. Maintenez à 15-20°C avec une humidité modérée
-3. Les graines germent en 2-4 semaines
-4. Repiquez lorsque les plantules ont 4-5 feuilles
-
-### Bouturage
-
-1. Prélevez des boutures herbacées au printemps
-2. Trempez dans de l'hormone de bouturage
-3. Maintenez dans un mélange humide et ombragé
-4. Les boutures prennent généralement bien
-
-## Conseils
-
-- Parfait pour les jardins potagers
-- Les fruits sont nutritifs
-- Le potiron est polyvalent en cuisine
-- Évitez les sols gorgés d'eau
-- Protégez des vents froids
-
-## Utilisations
-
-### Culinaires
-
-- Soupe
-- Purée
-- Ragoûts
-- Pâtisseries
-- Boissons
-
-### Médicinales
-
-- Riche en vitamines
-- Propriétés antioxydantes
-- Amélioration de la digestion
-- Renforcement du système immunitaire
-- Propriétés diurétiques
-
-## Problèmes courants
-
-- **Oïdium** : maladie fongique, traiter avec du soufre
-- **Pucerons** : traiter avec du savon noir
-- **Acariens** : augmenter l'humidité ambiante
-- **Carences** : apport de compost en automne
-
-## Soins spécifiques
-
-- Paillage au pied pour conserver l'humidité
-- Récoltez les fruits mûrs
-- Protection contre les maladies fongiques
-- Rotation des cultures
-- Espacement des plants
-
-## Astuces
-
-- Plantez plusieurs potirons pour une meilleure pollinisation
-- Évitez les sols gorgés d'eau
-- Le potiron est un légume-fruit
-- Les fruits jeunes ont plus de saveur
-- Le potiron attire les abeilles

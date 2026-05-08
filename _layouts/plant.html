@@ -19,7 +19,13 @@ layout: default
             <a href="{{ '/plantes/' | relative_url }}?tag={{ tag | slugify }}" class="tag">{{ tag }}</a>
             {% endfor %}
           </div>
-          <h1 class="plant-title">{{ page.title }}</h1>
+          <h1 class="plant-title">{{ page.title }}
+            <button id="export-pdf" class="export-button">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/>
+              </svg>
+            </button>
+          </h1>
           {% if page.latin_name %}
           <p class="plant-latin">{{ page.latin_name }}</p>
           {% endif %}
@@ -238,7 +244,6 @@ layout: default
         </div>
       </div>
 
-      <!-- Associations Tab -->
       <div id="associations" class="tab-pane">
         <section class="associations">
           <h2>Bonnes Associations (Guildes)</h2>
@@ -246,17 +251,41 @@ layout: default
             {% for slug_ami in page.compagnons %}
               {% assign ami = site.plants | where: "slug", slug_ami | first %}
               {% if ami %}
-                <div class="assoc-card">
-                  <a href="{{ ami.url | relative_url }}">
-                    <img src="{{ ami.image | relative_url }}" alt="{{ ami.title }}">
-                    <p>{{ ami.title }}</p>
-                  </a>
-                </div>
+              <div class="assoc-card good">
+                <a href="{{ ami.url | relative_url }}">
+                  <img src="{{ ami.image | relative_url }}" alt="{{ ami.title }}">
+                  <p>{{ ami.title }}</p>
+                </a>
+              </div>
+              {% endif %}
+            {% endfor %}
+          </div>
+        </section>
+
+        <section class="associations">
+          <h2>Associations à Éviter</h2>
+          <div class="assoc-grid">
+            {% for slug_ennemi in page.enemies %}
+              {% assign ennemi = site.plants | where: "slug", slug_ennemi | first %}
+              {% if ennemi %}
+              <div class="assoc-card bad">
+                <a href="{{ ennemi.url | relative_url }}">
+                  <img src="{{ ennemi.image | relative_url }}" alt="{{ ennemi.title }}">
+                  <p>{{ ennemi.title }}</p>
+                </a>
+              </div>
               {% endif %}
             {% endfor %}
           </div>
         </section>
       </div>
+
+
+
+
+
+
+
     </div>
   </div>
 </article>
@@ -280,4 +309,524 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
 });
+</script>
+
+<!-- Zone cachée pour générer le QR Code -->
+<div id="qrcode-canvas" style="display:none;"></div>
+
+<!-- Scripts -->
+<script src="{{ '/assets/js/jspdf.umd.min.js' | relative_url }}"></script>
+<script src="{{ '/assets/js/qrcode.min.js' | relative_url }}"></script>
+
+<script>
+async function genererMaFiche() {
+  //console.log("🌿 Génération PDF minimaliste");
+  const { jsPDF } = window.jspdf;
+  
+  const doc = new jsPDF({
+    orientation: "p",
+    unit: "mm",
+    format: "a4"
+  });
+
+  // =========================
+  // PALETTE MINIMALISTE
+  // =========================
+  const colors = {
+    primary: [20, 20, 20],         // Noir profond
+    accent: [45, 106, 79],          // Vert accent
+    gray: [120, 120, 120],          // Gris moyen
+    lightGray: [220, 220, 220],     // Gris très clair
+    white: [255, 255, 255]
+  };
+
+  // =========================
+  // GÉNÉRATION QR CODE
+  // =========================
+  const qrDiv = document.getElementById("qrcode-canvas");
+  qrDiv.innerHTML = "";
+  new QRCode(qrDiv, {
+    text: window.location.href,
+    width: 256,
+    height: 256,
+    colorDark: "#141414",
+    colorLight: "#ffffff"
+  });
+
+  await new Promise(resolve => setTimeout(resolve, 300));
+  const canvas = qrDiv.querySelector("canvas");
+  if (!canvas) {
+    console.error("❌ QR Code non généré");
+    return;
+  }
+  const qrData = canvas.toDataURL("image/png");
+
+  // =========================
+  // MISE EN PAGE
+  // =========================
+  const margin = 15;
+  const pageWidth = 210;
+  const contentWidth = pageWidth - (margin * 2);
+  let yPos = margin;
+
+  // =========================
+  // EN-TÊTE MINIMALISTE
+  // =========================
+  // Titre principal
+  doc.setFont("helvetica", "bold");
+  doc.setFontSize(28);
+  doc.setTextColor(...colors.primary);
+  doc.text("{{ page.title }}", margin, yPos);
+  yPos += 7;
+
+  // Nom latin + famille
+  doc.setFont("helvetica", "italic");
+  doc.setFontSize(11);
+  doc.setTextColor(...colors.gray);
+  doc.text("{{ page.latin_name }}", margin, yPos);
+  
+  doc.setFont("helvetica", "normal");
+  doc.setFontSize(9);
+  doc.text("{{ page.famille }}", pageWidth - margin, yPos, { align: "right" });
+  yPos += 10;
+
+  // Ligne de séparation fine
+  doc.setDrawColor(...colors.lightGray);
+  doc.setLineWidth(0.3);
+  doc.line(margin, yPos, pageWidth - margin, yPos);
+  yPos += 8;
+
+  // =========================
+  // SECTION PRINCIPALE (2 colonnes)
+  // =========================
+  const colLeft = margin;
+  const colRight = margin + 105;
+  const imageStartY = yPos;
+
+  // COLONNE GAUCHE: Image
+  const img = new Image();
+  img.crossOrigin = "anonymous";
+  img.src = "{{ page.image | relative_url }}";
+
+  img.onload = function () {
+    //console.log("✅ Image chargée");
+
+    // Image avec cadre subtil - conserve le ratio
+    const maxImgWidth = 90;
+    const maxImgHeight = 60;
+    
+    // Calcul du ratio pour conserver les proportions
+    const imgRatio = img.width / img.height;
+    const maxRatio = maxImgWidth / maxImgHeight;
+    
+    let finalWidth, finalHeight;
+    if (imgRatio > maxRatio) {
+      // Image plus large que haute
+      finalWidth = maxImgWidth;
+      finalHeight = maxImgWidth / imgRatio;
+    } else {
+      // Image plus haute que large
+      finalHeight = maxImgHeight;
+      finalWidth = maxImgHeight * imgRatio;
+    }
+    
+    // Centrer l'image dans l'espace disponible
+    const imgX = colLeft + (maxImgWidth - finalWidth) / 2;
+    const imgY = imageStartY + (maxImgHeight - finalHeight) / 2;
+    
+    doc.setDrawColor(...colors.lightGray);
+    doc.setLineWidth(0.2);
+    doc.rect(colLeft, imageStartY, maxImgWidth, maxImgHeight, 'S');
+    doc.addImage(img, "WEBP", imgX, imgY, finalWidth, finalHeight);
+
+    // QR Code (petit, en haut à droite)
+    const qrSize = 22;
+    const qrX = pageWidth - margin - qrSize;
+    const qrY = margin;
+    doc.addImage(qrData, "PNG", qrX, qrY, qrSize, qrSize);
+    
+    doc.setFont("helvetica", "normal");
+    doc.setFontSize(6);
+    doc.setTextColor(...colors.gray);
+    doc.text("Scan", qrX + (qrSize / 2), qrY + qrSize + 2.5, { align: "center" });
+
+    // COLONNE DROITE: Infos essentielles
+    let h_espace = 10; 
+    let rightYPos = imageStartY + h_espace;
+
+    // Grille compacte d'informations
+    const infoGrid = [
+      { icon: "☀", label: "Exposition", value: "{{ page.exposition }}" },
+      { icon: "💧", label: "Arrosage", value: "{{ page.arrosage }}" },
+      { icon: "↕", label: "Hauteur", value: "{{ page.hauteur }}" },
+      { icon: "❄", label: "Rusticité", value: "{{ page.rusticite }}" },
+      { icon: "🌍", label: "Origine", value: "{{ page.origine }}" },
+      { icon: "★", label: "Difficulté", value: "{{ page.difficulte }}" },
+      { icon: "🌸", label: "Floraison", value: "{{ page.floraison }}" },
+      { icon: "⚗", label: "Sol", value: "{{ page.sol }}" }
+    ];
+
+    doc.setFont("helvetica", "normal");
+    doc.setFontSize(8.5);
+    const lineHeight = 5.5;
+
+    infoGrid.forEach(item => {
+      if (item.value && item.value !== "") {
+        
+        // Label
+        doc.setTextColor(...colors.gray);
+        doc.text(item.label, colRight + 6, rightYPos);
+        
+        // Valeur
+        doc.setFont("helvetica", "bold");
+        doc.setTextColor(...colors.primary);
+        const valueLines = doc.splitTextToSize(item.value, 75);
+        doc.text(valueLines[0], colRight + 30, rightYPos);
+        doc.setFont("helvetica", "normal");
+        
+        rightYPos += lineHeight;
+      }
+    });
+
+    // Toxicité (si présente, en alerte)
+    const toxicite = "{{ page.toxicite }}";
+    if (toxicite && toxicite !== "") {
+      rightYPos += 2;
+      doc.setDrawColor(220, 38, 38);
+      doc.setFillColor(254, 242, 242);
+      doc.roundedRect(colRight, rightYPos - 3.5, 88, 10, 1, 1, 'FD');
+      
+      doc.setFont("helvetica", "bold");
+      doc.setFontSize(8);
+      doc.setTextColor(185, 28, 28);
+      doc.text("⚠ TOXIQUE", colRight + 2, rightYPos);
+      
+      doc.setFont("helvetica", "normal");
+      doc.setFontSize(7);
+      const toxLines = doc.splitTextToSize(toxicite, 80);
+      doc.text(toxLines, colRight + 2, rightYPos + 3.5);
+    }
+
+    // =========================
+    // DESCRIPTION (pleine largeur)
+    // =========================
+    yPos = Math.max(imageStartY + maxImgHeight + 30, rightYPos + 15);
+
+    doc.setFont("helvetica", "bold");
+    doc.setFontSize(11);
+    doc.setTextColor(...colors.primary);
+    doc.text("Description", margin, yPos);
+    yPos += 5;
+
+    doc.setFont("helvetica", "normal");
+    doc.setFontSize(9);
+    doc.setTextColor(...colors.primary);
+    doc.setLineHeightFactor(1.4);
+    const description = "{{ page.description }}";
+    const descLines = doc.splitTextToSize(description, contentWidth);
+    doc.text(descLines, margin, yPos);
+    yPos += descLines.length * 3.5 + 6;
+
+    // =========================
+    // SECTION ENTRETIEN & CONSEILS (2 colonnes)
+    // =========================
+    const col1X = margin;
+    const col2X = margin + (contentWidth / 2) + 3;
+    const colWidth = (contentWidth / 2) - 3;
+    let col1Y = yPos;
+    let col2Y = yPos;
+
+    // COLONNE 1: Entretien
+    const entretien = [
+      {% for item in page.entretien %}"{{ item }}",
+      {% endfor %}
+    ];
+
+    if (entretien.length > 0 && entretien[0] !== "") {
+      doc.setFont("helvetica", "bold");
+      doc.setFontSize(10);
+      doc.setTextColor(...colors.primary);
+      doc.text("Entretien", col1X, col1Y);
+      col1Y += 4;
+
+      doc.setFont("helvetica", "normal");
+      doc.setFontSize(7.5);
+      doc.setTextColor(...colors.gray);
+
+      entretien.forEach(item => {
+        if (item && col1Y < 270) {
+          const lines = doc.splitTextToSize("• " + item, colWidth - 2);
+          doc.text(lines, col1X, col1Y);
+          col1Y += lines.length * 3 + 1;
+        }
+      });
+    }
+
+    // COLONNE 2: Astuces & Conseils
+    const astuces = [
+      {% for item in page.astuces %}"{{ item }}",
+      {% endfor %}
+    ];
+
+    if (astuces.length > 0 && astuces[0] !== "") {
+      doc.setFont("helvetica", "bold");
+      doc.setFontSize(10);
+      doc.setTextColor(...colors.primary);
+      doc.text("Astuces", col2X, col2Y);
+      col2Y += 4;
+
+      doc.setFont("helvetica", "normal");
+      doc.setFontSize(7.5);
+      doc.setTextColor(...colors.gray);
+
+      astuces.forEach(item => {
+        if (item && col2Y < 270) {
+          const lines = doc.splitTextToSize("• " + item, colWidth - 2);
+          doc.text(lines, col2X, col2Y);
+          col2Y += lines.length * 3 + 1;
+        }
+      });
+    }
+
+    col2Y += 3;
+
+    const conseils = [
+      {% for item in page.conseils %}"{{ item }}",
+      {% endfor %}
+    ];
+
+    if (conseils.length > 0 && conseils[0] !== "" && col2Y < 265) {
+      doc.setFont("helvetica", "bold");
+      doc.setFontSize(10);
+      doc.setTextColor(...colors.primary);
+      doc.text("Conseils", col2X, col2Y);
+      col2Y += 4;
+
+      doc.setFont("helvetica", "normal");
+      doc.setFontSize(7.5);
+      doc.setTextColor(...colors.gray);
+
+      conseils.forEach(item => {
+        if (item && col2Y < 270) {
+          const lines = doc.splitTextToSize("• " + item, colWidth - 2);
+          doc.text(lines, col2X, col2Y);
+          col2Y += lines.length * 3 + 1;
+        }
+      });
+    }
+
+    // =========================
+    // CALENDRIER (si présent)
+    // =========================
+    const semis = [{% for m in page.calendrier.semis %}{{ m }},{% endfor %}];
+    const taille = [{% for m in page.calendrier.taille %}{{ m }},{% endfor %}];
+    const bouturage = [{% for m in page.calendrier.bouturage %}{{ m }},{% endfor %}];
+    
+    if (semis.length > 0 || taille.length > 0 || bouturage.length > 0) {
+      yPos = Math.max(col1Y, col2Y) + 5;
+      
+      if (yPos < 265) {
+        doc.setFont("helvetica", "bold");
+        doc.setFontSize(10);
+        doc.setTextColor(...colors.primary);
+        doc.text("Calendrier", margin, yPos);
+        yPos += 5;
+
+        // Barre des mois
+        const monthWidth = contentWidth / 12;
+        const barHeight = 8;
+        const months = ['J', 'F', 'M', 'A', 'M', 'J', 'J', 'A', 'S', 'O', 'N', 'D'];
+        
+        // Headers mois
+        doc.setFont("helvetica", "normal");
+        doc.setFontSize(7);
+        doc.setTextColor(...colors.gray);
+        months.forEach((m, i) => {
+          doc.text(m, margin + (i * monthWidth) + (monthWidth / 2), yPos, { align: "center" });
+        });
+        yPos += 3;
+
+        // Fonction pour dessiner une ligne de calendrier
+        const drawCalendarRow = (label, activeMonths, color) => {
+          doc.setFontSize(7);
+          doc.setTextColor(...colors.gray);
+          doc.text(label, margin, yPos + 3);
+          
+          for (let i = 1; i <= 12; i++) {
+            const x = margin + 18 + ((i - 1) * monthWidth);
+            if (activeMonths.includes(i)) {
+              doc.setFillColor(...color);
+              doc.roundedRect(x, yPos, monthWidth - 0.5, 4, 0.5, 0.5, 'F');
+            } else {
+              doc.setFillColor(245, 245, 245);
+              doc.rect(x, yPos, monthWidth - 0.5, 4, 'F');
+            }
+          }
+          yPos += 5;
+        };
+
+        if (semis.length > 0) drawCalendarRow("Semis", semis, [134, 239, 172]);
+        if (bouturage.length > 0) drawCalendarRow("Bouture", bouturage, [147, 197, 253]);
+        if (taille.length > 0) drawCalendarRow("Taille", taille, [251, 191, 36]);
+      }
+    }
+
+    // =========================
+    // TAGS (en bas)
+    // =========================
+    yPos = 285;
+    doc.setFont("helvetica", "normal");
+    doc.setFontSize(7);
+    doc.setTextColor(...colors.gray);
+    
+    const tags = [
+      {% for tag in page.tags %}"{{ tag }}",
+      {% endfor %}
+    ];
+    
+    if (tags.length > 0 && tags[0] !== "") {
+      const tagText = tags.filter(t => t).join(" • ");
+      doc.text(tagText, margin, yPos);
+    }
+
+    // Date de génération (coin droit)
+    const dateStr = new Date().toLocaleDateString('fr-FR');
+    doc.text(dateStr, pageWidth - margin, yPos, { align: "right" });
+
+    // =========================
+    // SAUVEGARDE
+    // =========================
+    const filename = "{{ page.slug }}_fiche.pdf";
+    doc.save(filename);
+    //console.log("✅ PDF généré: " + filename);
+  };
+
+  img.onerror = function () {
+    console.error("❌ Erreur chargement image");
+    alert("Impossible de charger l'image pour générer le PDF.");
+  };
+}
+
+// =========================
+// SYSTÈME DE CHARGEMENT
+// =========================
+ 
+// Créer l'overlay de chargement
+function createLoader() {
+  const loader = document.createElement('div');
+  loader.id = 'pdf-loader';
+  loader.innerHTML = `
+    <div class="loader-content">
+      <div class="spinner"></div>
+      <p class="loader-text">Génération du PDF en cours...</p>
+      <p class="loader-subtext">🌿 Préparation de votre fiche plante</p>
+    </div>
+  `;
+  document.body.appendChild(loader);
+  
+  // Styles injectés
+  const style = document.createElement('style');
+  style.textContent = `
+    #pdf-loader {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.7);
+      backdrop-filter: blur(8px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 9999;
+      animation: fadeIn 0.3s ease;
+    }
+    
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    
+    @keyframes fadeOut {
+      from { opacity: 1; }
+      to { opacity: 0; }
+    }
+    
+    .loader-content {
+      background: white;
+      padding: 2.5rem 3rem;
+      border-radius: 16px;
+      text-align: center;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+      animation: slideUp 0.4s ease;
+    }
+    
+    @keyframes slideUp {
+      from {
+        transform: translateY(30px);
+        opacity: 0;
+      }
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+    
+    .spinner {
+      width: 50px;
+      height: 50px;
+      margin: 0 auto 1.5rem;
+      border: 4px solid #f3f4f6;
+      border-top: 4px solid #52b788;
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+    }
+    
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+    
+    .loader-text {
+      margin: 0 0 0.5rem 0;
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: #1f1f1f;
+    }
+    
+    .loader-subtext {
+      margin: 0;
+      font-size: 0.9rem;
+      color: #6b7280;
+    }
+  `;
+  document.head.appendChild(style);
+}
+ 
+function removeLoader() {
+  const loader = document.getElementById('pdf-loader');
+  if (loader) {
+    loader.style.animation = 'fadeOut 0.3s ease';
+    setTimeout(() => loader.remove(), 300);
+  }
+}
+ 
+// Wrapper pour gérer le chargement
+async function handlePDFGeneration() {
+  createLoader();
+  try {
+    await genererMaFiche();
+    // Petit délai pour que l'utilisateur voie que c'est terminé
+    setTimeout(removeLoader, 500);
+  } catch (error) {
+    removeLoader();
+    alert("Erreur lors de la génération du PDF : " + error.message);
+    console.error(error);
+  }
+}
+
+
+// Attacher l'événement
+document.getElementById("export-pdf").addEventListener("click", handlePDFGeneration);
+
 </script>

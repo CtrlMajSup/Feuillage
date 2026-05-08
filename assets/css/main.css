@@ -76,6 +76,21 @@ ul { list-style: none; }
   vertical-align: middle;
 }
 
+.export-button {
+  border: none;
+  background: transparent;
+  padding: 8px;
+  border-radius: 8px;
+  color: #666;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.export-button:hover {
+  background: #f3f3f3;
+  color: #000;
+}
+
 .header-inner {
   height: 100%;
   display: flex;
@@ -506,6 +521,45 @@ ul { list-style: none; }
 }
 .quick-info-value { font-size: .9375rem; font-weight: 500; }
 
+/* Style pour la section Conseils */
+.plant-section h2 {
+  color: #2d6a4f;
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid #52b788;
+}
+
+.plant-section ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.plant-section ul li {
+  position: relative;
+  padding-left: 1.8rem;
+  margin-bottom: 0.8rem;
+  line-height: 1.6;
+  color: #333;
+}
+
+.plant-section ul li::before {
+  position: absolute;
+  left: 0;
+  font-size: 1.1rem;
+}
+
+.plant-section ul li:hover {
+  background-color: #f0f9f4;
+  padding: 0.5rem 0.5rem 0.5rem 1.8rem;
+  margin-left: -0.5rem;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+}
+
+
 /* Plant body */
 .plant-body {
   padding-top: 48px;
@@ -772,35 +826,139 @@ ul { list-style: none; }
   }
 }
 
+/* Sections associations */
 .associations {
-  margin-top: 40px;
-  padding-top: 20px;
-  border-top: 2px solid #eef2ee;
+  margin-bottom: 3rem;
 }
 
+.associations h2 {
+  color: #1f1f1f;
+  font-size: 1.6rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  position: relative;
+  padding-left: 2rem;
+}
+
+.associations h2::before {
+  content: "🤝";
+  position: absolute;
+  left: 0;
+  font-size: 1.4rem;
+}
+
+.associations:last-child h2::before {
+  content: "⚠️";
+}
+
+/* Grille des associations */
 .assoc-grid {
-  display: flex;
-  gap: 20px;
-  flex-wrap: wrap; /* Pour que ça passe à la ligne sur mobile */
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: 1.5rem;
 }
 
+/* Cartes d'association */
 .assoc-card {
-  width: 150px;
-  text-align: center;
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  background: white;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.assoc-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(135deg, #52b788 0%, #2d6a4f 100%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.assoc-card.bad::before {
+  background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+}
+
+.assoc-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+}
+
+.assoc-card:hover::before {
+  opacity: 1;
+}
+
+.assoc-card a {
+  display: block;
+  text-decoration: none;
+  color: inherit;
 }
 
 .assoc-card img {
   width: 100%;
-  height: 100px;
-  object-fit: cover; /* Recadre l'image proprement */
-  border-radius: 10px;
-  border: 1px solid #ddd;
+  height: 140px;
+  object-fit: cover;
+  display: block;
 }
 
-.assoc-card a {
-  text-decoration: none;
-  color: #2d5a27;
+.assoc-card p {
+  padding: 0.8rem;
+  margin: 0;
+  text-align: center;
+  font-weight: 500;
+  color: #333;
+  font-size: 0.95rem;
+}
+
+.assoc-card.good:hover p {
+  color: #2d6a4f;
+}
+
+.assoc-card.bad:hover p {
+  color: #dc2626;
+}
+
+/* Icône visuelle sur les cartes */
+.assoc-card.good::after {
+  content: "✓";
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  width: 28px;
+  height: 28px;
+  background: rgba(82, 183, 136, 0.95);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   font-weight: bold;
+  font-size: 0.9rem;
+  opacity: 0;
+  transform: scale(0.8);
+  transition: all 0.3s ease;
+}
+
+.assoc-card:hover::after {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .assoc-grid {
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    gap: 1rem;
+  }
+  
+  .assoc-card img {
+    height: 120px;
+  }
 }
 
 
